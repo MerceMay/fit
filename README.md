@@ -29,12 +29,18 @@
 
 | # | 动作 | 组数 | 次数 | 间隔 |
 |---|------|------|------|------|
-| 1 | **平板杠铃卧推** ![平板卧推](gifs/Barbell_Bench_Press_-_Medium_Grip.gif) | 4 | 8–12 | 90s |
-| 2 | **上斜哑铃卧推** ![上斜卧推](gifs/Incline_Dumbbell_Press.gif) | 4 | 8–12 | 90s |
-| 3 | **蝴蝶机夹胸**（或绳索飞鸟） ![蝴蝶机](gifs/Butterfly.gif) | 3 | 12–15 | 60s |
-| 4 | **坐姿哑铃推举** ![哑铃推举](gifs/Seated_Dumbbell_Press.gif) | 4 | 8–12 | 90s |
-| 5 | **哑铃侧平举** ![侧平举](gifs/Side_Lateral_Raise.gif) | 4 | 12–15 | 60s |
-| 6 | **绳索下压**（或碎颅者） ![绳索下压](gifs/Triceps_Pushdown_-_Rope_Attachment.gif) | 3 | 12–15 | 45s |
+| 1 | **平板杠铃卧推（Barbell Bench Press）** | 4 | 8–12 | 90s |
+|   | ![平板卧推](gifs/Barbell_Bench_Press_-_Medium_Grip.gif) | | | |
+| 2 | **上斜哑铃卧推（Incline Dumbbell Press）** | 4 | 8–12 | 90s |
+|   | ![上斜卧推](gifs/Incline_Dumbbell_Press.gif) | | | |
+| 3 | **蝴蝶机夹胸（Pec Deck）** | 3 | 12–15 | 60s |
+|   | ![蝴蝶机](gifs/Butterfly.gif) | | | |
+| 4 | **坐姿哑铃推举（Seated Dumbbell Press）** | 4 | 8–12 | 90s |
+|   | ![哑铃推举](gifs/Seated_Dumbbell_Press.gif) | | | |
+| 5 | **哑铃侧平举（Side Lateral Raise）** | 4 | 12–15 | 60s |
+|   | ![侧平举](gifs/Side_Lateral_Raise.gif) | | | |
+| 6 | **绳索下压（Triceps Pushdown）** | 3 | 12–15 | 45s |
+|   | ![绳索下压](gifs/Triceps_Pushdown_-_Rope_Attachment.gif) | | | |
 
 ---
 
@@ -42,12 +48,18 @@
 
 | # | 动作 | 组数 | 次数 | 间隔 |
 |---|------|------|------|------|
-| 1 | **传统硬拉** ![硬拉](gifs/Barbell_Deadlift.gif) | 3–4 | 5–8 | 120s |
-| 2 | **引体向上**（或高位下拉） ![引体](gifs/Pullups.gif) | 4 | 8–12 | 90s |
-| 3 | **T杠划船**（或单臂哑铃划船） ![T杠](gifs/T-Bar_Row_with_Handle.gif) | 4 | 8–12 | 90s |
-| 4 | **绳索面拉** ![面拉](gifs/Face_Pull.gif) | 3 | 12–15 | 60s |
-| 5 | **杠铃弯举** ![弯举](gifs/Wide-Grip_Standing_Barbell_Curl.gif) | 3 | 10–15 | 60s |
-| 6 | **锤式弯举** ![锤式](gifs/Hammer_Curls.gif) | 3 | 10–15 | 60s |
+| 1 | **传统硬拉（Conventional Deadlift）** | 3–4 | 5–8 | 120s |
+|   | ![硬拉](gifs/Barbell_Deadlift.gif) | | | |
+| 2 | **引体向上（Pull-ups）** | 4 | 8–12 | 90s |
+|   | ![引体](gifs/Pullups.gif) | | | |
+| 3 | **T杠划船（T-Bar Row）** | 4 | 8–12 | 90s |
+|   | ![T杠](gifs/T-Bar_Row_with_Handle.gif) | | | |
+| 4 | **绳索面拉（Face Pull）** | 3 | 12–15 | 60s |
+|   | ![面拉](gifs/Face_Pull.gif) | | | |
+| 5 | **杠铃弯举（Barbell Curl）** | 3 | 10–15 | 60s |
+|   | ![弯举](gifs/Wide-Grip_Standing_Barbell_Curl.gif) | | | |
+| 6 | **锤式弯举（Hammer Curl）** | 3 | 10–15 | 60s |
+|   | ![锤式](gifs/Hammer_Curls.gif) | | | |
 
 ---
 
@@ -55,13 +67,22 @@
 
 | # | 动作 | 组数 | 次数 | 间隔 |
 |---|------|------|------|------|
-| 1 | **杠铃深蹲** ![深蹲](gifs/Barbell_Squat.gif) | 5 | 8–12 | 120s |
-| 2 | **倒蹬机** ![倒蹬](gifs/Leg_Press.gif) | 4 | 8–12 | 90s |
-| 3 | **坐姿腿屈伸** ![腿屈伸](gifs/Leg_Extensions.gif) | 4 | 12–15 | 60s |
-| 4 | **罗马尼亚硬拉** ![罗马尼亚硬拉](gifs/Romanian_Deadlift.gif) | 4 | 8–12 | 90s |
-| 5 | **俯卧腿弯举** ![腿弯举](gifs/Lying_Leg_Curls.gif) | 4 | 12–15 | 60s |
-| 6 | **杠铃臀推** ![臀推](gifs/Barbell_Hip_Thrust.gif) | 4 | 10–15 | 60s |
-| 7 | **站姿提踵 + 坐姿提踵** ![站姿](gifs/Standing_Calf_Raises.gif) | 各 4 | 15–20 | 45s |
+| 1 | **杠铃深蹲（Barbell Squat）** | 5 | 8–12 | 120s |
+|   | ![深蹲](gifs/Barbell_Squat.gif) | | | |
+| 2 | **倒蹬机（Leg Press）** | 4 | 8–12 | 90s |
+|   | ![倒蹬](gifs/Leg_Press.gif) | | | |
+| 3 | **坐姿腿屈伸（Leg Extension）** | 4 | 12–15 | 60s |
+|   | ![腿屈伸](gifs/Leg_Extensions.gif) | | | |
+| 4 | **罗马尼亚硬拉（Romanian Deadlift）** | 4 | 8–12 | 90s |
+|   | ![罗马尼亚硬拉](gifs/Romanian_Deadlift.gif) | | | |
+| 5 | **俯卧腿弯举（Lying Leg Curl）** | 4 | 12–15 | 60s |
+|   | ![腿弯举](gifs/Lying_Leg_Curls.gif) | | | |
+| 6 | **杠铃臀推（Barbell Hip Thrust）** | 4 | 10–15 | 60s |
+|   | ![臀推](gifs/Barbell_Hip_Thrust.gif) | | | |
+| 7 | **站姿提踵（Standing Calf Raise）** | 4 | 15–20 | 45s |
+|   | ![站姿提踵](gifs/Standing_Calf_Raises.gif) | | | |
+| 8 | **坐姿提踵（Seated Calf Raise）** | 4 | 15–20 | 45s |
+|   | ![坐姿提踵](gifs/Seated_Calf_Raise.gif) | | | |
 
 ---
 
