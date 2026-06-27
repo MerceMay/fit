@@ -1,43 +1,6 @@
 # 三分化训练计划（Push / Pull / Legs + 每日腹部）
 
-> **图片说明**：所有动作图片来自 [free-exercise-db](https://github.com/yuhonas/free-exercise-db) 开源真人示范库。`⭐` = 推荐指数（1–5）。
-
----
-
-# 🏋️ 你的健身房设备清单
-
-## ✅ 已确认有的设备
-
-| 设备 | 对应动作 |
-|------|----------|
-| 力量架 + 杠铃 + 哑铃 + 可调节凳 | 深蹲、卧推、硬拉、推举、划船、弯举等所有自由重量动作 |
-| 龙门架（绳索） | 绳索飞鸟、面拉、下压、卷腹、伐木等 |
-| 引体向上杆 | 引体向上、悬垂举腿 |
-| 蝴蝶机 | 蝴蝶机夹胸 |
-| 高位下拉 | 高位下拉（宽握/窄握） |
-| 助力引体机 | 辅助引体向上 |
-| 剪刀拉背（坐姿划船机） | 坐姿绳索划船 |
-| T杆划船器 | T杠划船 |
-| 45度倒蹬机 | 器械倒蹲 |
-| 俯卧屈腿训练器 | 俯卧腿弯举 |
-| 坐姿腿屈伸训练器 | 坐姿腿屈伸 |
-| 大腿内收外展肌 | 坐姿夹腿 + 坐姿髋外展 |
-| 站姿侧平举机 | 器械侧平举 |
-| 挂片式坐式推胸 | 器械推胸 |
-| 分动式坐式肩推训练器 | 器械推举 |
-
-## ❌ 没有的设备 & 替代方案
-
-| 缺失设备 | 影响动作 | 替代方案 |
-|----------|----------|----------|
-| 哈克深蹲机 | 哈克深蹲 | → 杠铃前蹲 / 高脚杯深蹲 |
-| 坐姿腿弯举机 | 坐姿腿弯举 | → 北欧腿弯举 / 滑垫腿弯举（俯卧腿弯举已够） |
-| 山羊挺身架 | 山羊挺身 | → 早安式体前屈 |
-| 牧师凳 | 牧师凳弯举 | → 集中弯举 |
-| 双杠架 | 双杠臂屈伸 | → 凳上臂屈伸（两张平凳） |
-| 驴式提踵机 | 驴式提踵 | → 站姿提踵加量 |
-
-> 💡 你缺的 6 个设备都有有效替代方案，不影响训练质量。
+> `⭐` = 推荐指数（1–5），全部动作均附 GIF 动画示范。
 
 ---
 
@@ -125,12 +88,12 @@ Push        Pull        Legs        Rest        Push        Pull        Rest
 |   | ![Flat Barbell Bench Press](gifs/Barbell_Bench_Press_-_Medium_Grip.gif) | | | | |
 | 5 | **平板哑铃卧推（Flat Dumbbell Bench Press）** | ⭐⭐⭐⭐⭐ | 4 组 | 8–12 次 | 90s |
 |   | ![Flat Dumbbell Bench Press](gifs/Dumbbell_Bench_Press.gif) | | | | |
-| 6 | **蝴蝶机夹胸（Pec Deck Butterfly）** ✅ 有 | ⭐⭐⭐⭐ | 3 组 | 12–15 次 | 60s |
+| 6 | **蝴蝶机夹胸（Pec Deck Butterfly）** | ⭐⭐⭐⭐ | 3 组 | 12–15 次 | 60s |
 |   | ![Butterfly](gifs/Butterfly.gif) | | | | |
-| 7 | **绳索大飞鸟（Cable Crossover）** ✅ 龙门架 | ⭐⭐⭐⭐ | 3 组 | 12–15 次 | 60s |
+| 7 | **绳索大飞鸟（Cable Crossover）** | ⭐⭐⭐⭐ | 3 组 | 12–15 次 | 60s |
 |   | ![Cable Crossover](gifs/Cable_Crossover.gif) | | | | |
-| 8 | **挂片式坐式推胸（Plate-Loaded Seated Chest Press）** ✅ 有 | ⭐⭐⭐ | 3 组 | 10–12 次 | 60s |
-|   | ⚠️ 无独立图片（固定器械，健身房现场看示意图） | | | | |
+| 8 | **挂片式坐式推胸（Plate-Loaded Seated Chest Press）** | ⭐⭐⭐ | 3 组 | 10–12 次 | 60s |
+|   | ![Machine Chest Press](gifs/Machine_Chest_Press.gif) | | | | |
 
 > 💡 第 4、5 **二选一**。夹胸类选蝴蝶机或绳索飞鸟。器械推胸可选做——自由重量优先。
 
@@ -138,7 +101,7 @@ Push        Pull        Legs        Rest        Push        Pull        Rest
 
 | # | 动作 | 推荐 | 组数 | 次数 | 间隔 |
 |---|------|:----:|------|------|------|
-| 9 | **凳上臂屈伸（Bench Dips）** 🔄 替代双杠臂屈伸 | ⭐⭐⭐⭐ | 3 组 | 10–15 次 | 90s |
+| 9 | **凳上臂屈伸（Bench Dips）** | ⭐⭐⭐⭐ | 3 组 | 10–15 次 | 90s |
 |   | ![Bench Dips](gifs/Bench_Dips.gif) | | | | |
 | 10 | **下斜杠铃卧推（Decline Barbell Bench Press）** | ⭐⭐⭐ | 4 组 | 8–12 次 | 90s |
 |    | ![Decline Barbell Bench Press](gifs/Decline_Barbell_Bench_Press.gif) | | | | |
@@ -157,8 +120,8 @@ Push        Pull        Legs        Rest        Push        Pull        Rest
 |    | ![Seated Dumbbell Press](gifs/Seated_Dumbbell_Press.gif) | | | | |
 | 12 | **杠铃站姿推举（Standing Barbell Military Press）** | ⭐⭐⭐⭐⭐ | 4 组 | 8–12 次 | 90s |
 |    | ![Standing Military Press](gifs/Standing_Military_Press.gif) | | | | |
-| 13 | **分动式坐姿肩推机（Seated Shoulder Press Machine）** ✅ 有 | ⭐⭐⭐ | 3 组 | 10–12 次 | 90s |
-|    | ⚠️ 无独立图片（固定器械，健身房现场看示意图） | | | | |
+| 13 | **分动式坐姿肩推机（Seated Shoulder Press Machine）** | ⭐⭐⭐ | 3 组 | 10–12 次 | 90s |
+|    | ![Machine Shoulder Press](gifs/Machine_Shoulder_Press.gif) | | | | |
 | 14 | **阿诺德推举（Arnold Dumbbell Press）** | ⭐⭐⭐ | 3 组 | 10–12 次 | 90s |
 |    | ![Arnold Dumbbell Press](gifs/Arnold_Dumbbell_Press.gif) | | | | |
 | 15 | **哑铃前平举（Front Dumbbell Raise）** | ⭐⭐ | 3 组 | 12–15 次 | 60s |
@@ -172,9 +135,9 @@ Push        Pull        Legs        Rest        Push        Pull        Rest
 |---|------|:----:|------|------|------|
 | 16 | **哑铃侧平举（Dumbbell Side Lateral Raise）** | ⭐⭐⭐⭐⭐ | 4 组 | 12–15 次 | 60s |
 |    | ![Side Lateral Raise](gifs/Side_Lateral_Raise.gif) | | | | |
-| 17 | **站姿侧平举机（Standing Lateral Raise Machine）** ✅ 有 | ⭐⭐⭐⭐ | 3 组 | 12–15 次 | 60s |
-|    | ⚠️ 无独立图片（固定器械，健身房现场看示意图） | | | | |
-| 18 | **绳索单侧平举（Cable Lateral Raise）** ✅ 龙门架 | ⭐⭐⭐⭐ | 3 组 | 12–15 次 | 60s |
+| 17 | **站姿侧平举机（Standing Lateral Raise Machine）** | ⭐⭐⭐⭐ | 3 组 | 12–15 次 | 60s |
+|    | ![Lateral Raise Machine](gifs/Lateral_Raise_Machine.gif) | | | | |
+| 18 | **绳索单侧平举（Cable Lateral Raise）** | ⭐⭐⭐⭐ | 3 组 | 12–15 次 | 60s |
 |    | ![Cable Lateral Raise](gifs/Cable_Seated_Lateral_Raise.gif) | | | | |
 
 > 💡 中束是肩宽的**决定性因素**。每次推日必做侧平举。三种方式轮换——哑铃最基础、器械稳定、绳索恒定张力。
@@ -193,7 +156,7 @@ Push        Pull        Legs        Rest        Push        Pull        Rest
 |    | ![Skullcrusher](gifs/EZ-Bar_Skullcrusher.gif) | | | | |
 | 21 | **颈后杠铃臂屈伸（Overhead Barbell Triceps Extension）** | ⭐⭐⭐⭐ | 3 组 | 10–12 次 | 60s |
 |    | ![Overhead Triceps Extension](gifs/Standing_Overhead_Barbell_Triceps_Extension.gif) | | | | |
-| 22 | **绳索下压（Triceps Rope Pushdown）** ✅ 龙门架 | ⭐⭐⭐⭐ | 3 组 | 12–15 次 | 45s |
+| 22 | **绳索下压（Triceps Rope Pushdown）** | ⭐⭐⭐⭐ | 3 组 | 12–15 次 | 45s |
 |    | ![Triceps Rope Pushdown](gifs/Triceps_Pushdown_-_Rope_Attachment.gif) | | | | |
 
 > 💡 **窄距卧推是三头最高效的增肌动作**（EMG 研究证实）。碎颅者/颈后臂屈伸侧重长头拉伸，绳索下压收尾泵感。
@@ -227,11 +190,11 @@ Push        Pull        Legs        Rest        Push        Pull        Rest
 
 | # | 动作 | 推荐 | 组数 | 次数 | 间隔 |
 |---|------|:----:|------|------|------|
-| 23 | **正手引体向上（Pull-ups）** ✅ 引体杆 + 助力引体机 | ⭐⭐⭐⭐⭐ | 4 组 | 8–12 次 | 90s |
+| 23 | **正手引体向上（Pull-ups）** + 助力引体机 | ⭐⭐⭐⭐⭐ | 4 组 | 8–12 次 | 90s |
 |    | ![Pull-ups](gifs/Pullups.gif) | | | | |
-| 24 | **高位下拉（Wide-Grip Lat Pulldown）** ✅ 有 | ⭐⭐⭐⭐⭐ | 4 组 | 8–12 次 | 90s |
+| 24 | **高位下拉（Wide-Grip Lat Pulldown）** | ⭐⭐⭐⭐⭐ | 4 组 | 8–12 次 | 90s |
 |    | ![Lat Pulldown](gifs/Wide-Grip_Lat_Pulldown.gif) | | | | |
-| 25 | **直臂下压（Straight-Arm Pulldown）** ✅ 龙门架 | ⭐⭐⭐⭐ | 3 组 | 12–15 次 | 60s |
+| 25 | **直臂下压（Straight-Arm Pulldown）** | ⭐⭐⭐⭐ | 3 组 | 12–15 次 | 60s |
 |    | ![Straight-Arm Pulldown](gifs/Straight-Arm_Pulldown.gif) | | | | |
 | 26 | **单臂哑铃划船（One-Arm Dumbbell Row）** | ⭐⭐⭐⭐⭐ | 4 组 | 8–12 次 | 90s |
 |    | ![One-Arm Dumbbell Row](gifs/One-Arm_Dumbbell_Row.gif) | | | | |
@@ -242,10 +205,10 @@ Push        Pull        Legs        Rest        Push        Pull        Rest
 
 | # | 动作 | 推荐 | 组数 | 次数 | 间隔 |
 |---|------|:----:|------|------|------|
-| 27 | **T杠划船（T-Bar Row）** ✅ 有 | ⭐⭐⭐⭐⭐ | 4 组 | 8–12 次 | 90s |
+| 27 | **T杠划船（T-Bar Row）** | ⭐⭐⭐⭐⭐ | 4 组 | 8–12 次 | 90s |
 |    | ![T-Bar Row](gifs/T-Bar_Row_with_Handle.gif) | | | | |
-| 28 | **剪刀拉背 / 坐姿划船（Seated Cable Row）** ✅ 有 | ⭐⭐⭐⭐ | 4 组 | 8–12 次 | 90s |
-|    | ⚠️ 无独立图片（固定器械，健身房现场看示意图） | | | | |
+| 28 | **剪刀拉背 / 坐姿划船（Seated Cable Row）** | ⭐⭐⭐⭐ | 4 组 | 8–12 次 | 90s |
+|    | ![Seated Cable Row](gifs/Seated_Cable_Row.gif) | | | | |
 | 29 | **俯身Y字前平举（Prone Y Raise）** | ⭐⭐⭐ | 3 组 | 12–15 次 | 60s |
 |    | ![Prone Y Raise](gifs/Lying_Rear_Delt_Raise.gif) | | | | |
 
@@ -255,9 +218,9 @@ Push        Pull        Legs        Rest        Push        Pull        Rest
 
 | # | 动作 | 推荐 | 组数 | 次数 | 间隔 |
 |---|------|:----:|------|------|------|
-| 30 | **绳索面拉（Face Pull）** ✅ 龙门架 | ⭐⭐⭐⭐⭐ | 3 组 | 12–15 次 | 60s |
+| 30 | **绳索面拉（Face Pull）** | ⭐⭐⭐⭐⭐ | 3 组 | 12–15 次 | 60s |
 |    | ![Face Pull](gifs/Face_Pull.gif) | | | | |
-| 31 | **宽握高位下拉（Wide-Grip Lat Pulldown）** ✅ 有 | ⭐⭐⭐⭐ | 4 组 | 8–12 次 | 90s |
+| 31 | **宽握高位下拉（Wide-Grip Lat Pulldown）** | ⭐⭐⭐⭐ | 4 组 | 8–12 次 | 90s |
 |    | ![Wide-Grip Lat Pulldown](gifs/Wide-Grip_Lat_Pulldown.gif) | | | | |
 | 32 | **俯身哑铃侧平举（Bent-Over Rear Delt Raise）** | ⭐⭐⭐⭐ | 3 组 | 12–15 次 | 60s |
 |    | ![Bent-Over Rear Delt Raise](gifs/Seated_Bent-Over_Rear_Delt_Raise.gif) | | | | |
@@ -270,8 +233,8 @@ Push        Pull        Legs        Rest        Push        Pull        Rest
 |---|------|:----:|------|------|------|
 | 33 | **传统硬拉（Conventional Deadlift）** | ⭐⭐⭐⭐⭐ | 3–4 组 | 5–8 次 | 120–180s |
 |    | ![Conventional Deadlift](gifs/Barbell_Deadlift.gif) | | | | |
-| 34 | **早安式体前屈（Good Morning）** 🔄 替代山羊挺身 | ⭐⭐⭐⭐ | 3 组 | 10–12 次 | 60s |
-|    | ⚠️ 无独立图片：杠铃放斜方肌上，微屈膝，屈髋俯身至躯干接近水平 |
+| 34 | **早安式体前屈（Good Morning）** | ⭐⭐⭐⭐ | 3 组 | 10–12 次 | 60s |
+|    | ![Good Morning](gifs/Barbell_Good_Morning.gif) |
 | 35 | **屈腿硬拉（Stiff-Legged Barbell Deadlift）** | ⭐⭐⭐⭐ | 3 组 | 8–12 次 | 90–120s |
 |    | ![Stiff-Legged Deadlift](gifs/Stiff-Legged_Barbell_Deadlift.gif) | | | | |
 
@@ -294,7 +257,7 @@ Push        Pull        Legs        Rest        Push        Pull        Rest
 
 | # | 动作 | 推荐 | 组数 | 次数 | 间隔 |
 |---|------|:----:|------|------|------|
-| 37 | **集中弯举（Concentration Curl）** 🔄 替代牧师凳 | ⭐⭐⭐⭐ | 3 组 | 10–15 次 | 45s |
+| 37 | **集中弯举（Concentration Curl）** | ⭐⭐⭐⭐ | 3 组 | 10–15 次 | 45s |
 |    | ![Concentration Curl](gifs/Concentration_Curls.gif) | | | | |
 | 38 | **宽距杠铃弯举（Wide-Grip Barbell Curl）** | ⭐⭐⭐⭐ | 3 组 | 10–15 次 | 60s |
 |    | ![Wide-Grip Barbell Curl](gifs/Wide-Grip_Standing_Barbell_Curl.gif) | | | | |
@@ -309,7 +272,7 @@ Push        Pull        Legs        Rest        Push        Pull        Rest
 |    | ![Incline Dumbbell Curl](gifs/Incline_Dumbbell_Curl.gif) | | | | |
 | 40 | **窄距直杆弯举（Close-Grip Barbell Curl）** | ⭐⭐⭐⭐ | 3 组 | 10–15 次 | 60s |
 |    | ![Close-Grip Barbell Curl](gifs/Close-Grip_Standing_Barbell_Curl.gif) | | | | |
-| 41 | **高位绳索弯举（Overhead Cable Curl）** ✅ 龙门架 | ⭐⭐⭐ | 3 组 | 12–15 次 | 60s |
+| 41 | **高位绳索弯举（Overhead Cable Curl）** | ⭐⭐⭐ | 3 组 | 12–15 次 | 60s |
 |    | ![Overhead Cable Curl](gifs/Overhead_Cable_Curl.gif) | | | | |
 
 > 💡 上斜哑铃弯举让长头在**最大拉伸位**发力，是长头最佳动作。
@@ -351,14 +314,14 @@ Push        Pull        Legs        Rest        Push        Pull        Rest
 
 | # | 动作 | 推荐 | 组数 | 次数 | 间隔 |
 |---|------|:----:|------|------|------|
-| 44 | **杠铃深蹲（Barbell Squat）** ✅ 力量架 | ⭐⭐⭐⭐⭐ | 4–5 组 | 8–12 次 | 120s |
+| 44 | **杠铃深蹲（Barbell Squat）** | ⭐⭐⭐⭐⭐ | 4–5 组 | 8–12 次 | 120s |
 |    | ![Barbell Squat](gifs/Barbell_Squat.gif) | | | | |
-| 45 | **45度倒蹬机（Leg Press）** ✅ 有 | ⭐⭐⭐⭐⭐ | 4 组 | 8–12 次 | 90–120s |
+| 45 | **45度倒蹬机（Leg Press）** | ⭐⭐⭐⭐⭐ | 4 组 | 8–12 次 | 90–120s |
 |    | ![Leg Press](gifs/Leg_Press.gif) | | | | |
-| 46 | **坐姿腿屈伸（Leg Extension）** ✅ 有 | ⭐⭐⭐⭐ | 4 组 | 12–15 次 | 60–90s |
+| 46 | **坐姿腿屈伸（Leg Extension）** | ⭐⭐⭐⭐ | 4 组 | 12–15 次 | 60–90s |
 |    | ![Leg Extension](gifs/Leg_Extensions.gif) | | | | |
-| 47 | **杠铃前蹲（Front Squat）** 🔄 替代哈克深蹲 | ⭐⭐⭐⭐ | 4 组 | 8–12 次 | 90–120s |
-|    | ⚠️ 无独立图片：杠铃置于锁骨前侧，肘尖朝前，躯干更直立，股四刺激更强 |
+| 47 | **杠铃前蹲（Front Squat）** | ⭐⭐⭐⭐ | 4 组 | 8–12 次 | 90–120s |
+|    | ![Front Squat](gifs/Barbell_Front_Squat.gif) |
 
 > 💡 深蹲 + 倒蹬机是股四头黄金组合。没有哈克机，用**杠铃前蹲**替代——对股四头的刺激反而更强。
 
@@ -370,7 +333,7 @@ Push        Pull        Legs        Rest        Push        Pull        Rest
 |---|------|:----:|------|------|------|
 | 48 | **罗马尼亚硬拉（Romanian Deadlift）** | ⭐⭐⭐⭐⭐ | 3–4 组 | 8–12 次 | 90–120s |
 |    | ![Romanian Deadlift](gifs/Romanian_Deadlift.gif) | | | | |
-| 49 | **俯卧腿弯举（Lying Leg Curl）** ✅ 有 | ⭐⭐⭐⭐ | 4 组 | 12–15 次 | 60–90s |
+| 49 | **俯卧腿弯举（Lying Leg Curl）** | ⭐⭐⭐⭐ | 4 组 | 12–15 次 | 60–90s |
 |    | ![Lying Leg Curl](gifs/Lying_Leg_Curls.gif) | | | | |
 
 > 💡 没有坐姿腿弯举机，但**俯卧腿弯举已经足够**——罗马尼亚硬拉 + 俯卧腿弯举覆盖了腘绳肌的全部功能。
@@ -381,7 +344,7 @@ Push        Pull        Legs        Rest        Push        Pull        Rest
 
 | # | 动作 | 推荐 | 组数 | 次数 | 间隔 |
 |---|------|:----:|------|------|------|
-| 50 | **坐姿夹腿机（Seated Hip Adduction）** ✅ 有 | ⭐⭐⭐⭐ | 3 组 | 12–15 次 | 60s |
+| 50 | **坐姿夹腿机（Seated Hip Adduction）** | ⭐⭐⭐⭐ | 3 组 | 12–15 次 | 60s |
 |    | ![Seated Hip Adduction](gifs/Thigh_Adductor.gif) | | | | |
 | 51 | **宽距相扑硬拉（Sumo Deadlift）** | ⭐⭐⭐⭐ | 3 组 | 8–12 次 | 90–120s |
 |    | ![Sumo Deadlift](gifs/Sumo_Deadlift.gif) | | | | |
@@ -407,7 +370,7 @@ Push        Pull        Legs        Rest        Push        Pull        Rest
 |---|------|:----:|------|------|------|
 | 54 | **杠铃臀推（Barbell Hip Thrust）** | ⭐⭐⭐⭐⭐ | 4 组 | 10–15 次 | 60–90s |
 |    | ![Barbell Hip Thrust](gifs/Barbell_Hip_Thrust.gif) | | | | |
-| 55 | **坐姿髋外展（Seated Hip Abduction）** ✅ 有 | ⭐⭐⭐⭐ | 3 组 | 15–20 次 | 45–60s |
+| 55 | **坐姿髋外展（Seated Hip Abduction）** | ⭐⭐⭐⭐ | 3 组 | 15–20 次 | 45–60s |
 |    | ![Seated Hip Abduction](gifs/Thigh_Abductor.gif) | | | | |
 | 56 | **保加利亚剪蹲（Bulgarian Split Squat）** | ⭐⭐⭐⭐ | 3 组 | 10–12 次/腿 | 90s |
 |    | ![Bulgarian Split Squat](gifs/Split_Squat_with_Dumbbells.gif) | | | | |
@@ -433,15 +396,15 @@ Push        Pull        Legs        Rest        Push        Pull        Rest
 
 | 顺序 | 动作 | 组数 | 设备 |
 |------|------|------|------|
-| 1 | 杠铃深蹲 | 4–5 | 力量架 ✅ |
-| 2 | 45度倒蹬机 | 4 | ✅ 有 |
+| 1 | 杠铃深蹲 | 4–5 | 杠铃+深蹲架 |
+| 2 | 45度倒蹬机 | 4 | |
 | 3 | 杠铃登阶 或 弓步走 | 3 | 哑铃/杠铃 |
-| 4 | 坐姿腿屈伸 | 4 | ✅ 有 |
+| 4 | 坐姿腿屈伸 | 4 | |
 | 5 | 罗马尼亚硬拉 | 3–4 | 杠铃 |
-| 6 | 俯卧腿弯举 | 4 | ✅ 有 |
-| 7 | 坐姿夹腿机 | 3 | ✅ 有 |
+| 6 | 俯卧腿弯举 | 4 | |
+| 7 | 坐姿夹腿机 | 3 | |
 | 8 | 杠铃臀推 | 4 | 杠铃+凳 |
-| 9 | 坐姿髋外展 | 3 | ✅ 有 |
+| 9 | 坐姿髋外展 | 3 | |
 | 10 | 保加利亚剪蹲 | 3 | 哑铃+凳 |
 | 11 | 站姿提踵 + 坐姿提踵 | 各 4 | 杠铃/哑铃 |
 | **总组数** | | **~26–30 组** | |
@@ -460,7 +423,7 @@ Push        Pull        Legs        Rest        Push        Pull        Rest
 
 | # | 动作 | 推荐 | 组数 | 次数 | 间隔 |
 |---|------|:----:|------|------|------|
-| 59 | **绳索跪姿卷腹（Kneeling Cable Crunch）** ✅ 龙门架 | ⭐⭐⭐⭐⭐ | 3–4 组 | 12–15 次 | 45s |
+| 59 | **绳索跪姿卷腹（Kneeling Cable Crunch）** | ⭐⭐⭐⭐⭐ | 3–4 组 | 12–15 次 | 45s |
 |    | ![Kneeling Cable Crunch](gifs/Cable_Crunch.gif) | | | | |
 | 60 | **基础卷腹（Basic Crunch）** | ⭐⭐⭐ | 3–4 组 | 15–20 次 | 30s |
 |    | ![Basic Crunch](gifs/Crunches.gif) | | | | |
@@ -469,7 +432,7 @@ Push        Pull        Legs        Rest        Push        Pull        Rest
 
 | # | 动作 | 推荐 | 组数 | 次数 | 间隔 |
 |---|------|:----:|------|------|------|
-| 61 | **悬垂举腿（Hanging Leg Raise）** ✅ 引体杆 | ⭐⭐⭐⭐⭐ | 3 组 | 10–15 次 | 60s |
+| 61 | **悬垂举腿（Hanging Leg Raise）** | ⭐⭐⭐⭐⭐ | 3 组 | 10–15 次 | 60s |
 |    | ![Hanging Leg Raise](gifs/Hanging_Leg_Raise.gif) | | | | |
 | 62 | **反向卷腹（Reverse Crunch）** | ⭐⭐⭐⭐ | 3 组 | 15–20 次 | 30s |
 |    | ![Reverse Crunch](gifs/Reverse_Crunch.gif) | | | | |
@@ -484,7 +447,7 @@ Push        Pull        Legs        Rest        Push        Pull        Rest
 |    | ![Russian Twist](gifs/Russian_Twist.gif) | | | | |
 | 64 | **侧撑（Side Bridge / Side Plank）** | ⭐⭐⭐⭐ | 3 组 | 30–60s 保持 | 30s |
 |    | ![Side Bridge](gifs/Side_Bridge.gif) | | | | |
-| 65 | **站姿绳索伐木（Standing Cable Wood Chop）** ✅ 龙门架 | ⭐⭐⭐⭐ | 3 组 | 12–15 次/侧 | 45s |
+| 65 | **站姿绳索伐木（Standing Cable Wood Chop）** | ⭐⭐⭐⭐ | 3 组 | 12–15 次/侧 | 45s |
 |    | ![Standing Cable Wood Chop](gifs/Standing_Cable_Wood_Chop.gif) | | | | |
 
 ---
@@ -528,30 +491,30 @@ Push        Pull        Legs        Rest        Push        Pull        Rest
 
 | 肌群 | 动作 | 你的设备 |
 |------|------|:----:|
-| 上胸 | 上斜杠铃/哑铃卧推 | ✅ |
-| 中胸 | 平板杠铃/哑铃卧推 | ✅ |
-| 肩前束 | 坐姿哑铃推举 / 杠铃站姿推举 | ✅ |
-| 肩中束 | 哑铃侧平举 | ✅ |
-| 肱三头 | 窄距杠铃卧推、碎颅者 | ✅ |
-| 背阔肌宽度 | 引体向上、高位下拉 | ✅ |
-| 背阔肌厚度 | 单臂哑铃划船、T杠划船 | ✅ |
-| 上背外侧 | 绳索面拉 | ✅ 龙门架 |
-| 下背 | 传统硬拉 | ✅ |
-| 股四头 | 杠铃深蹲、45度倒蹬机 | ✅ |
-| 腘绳肌 | 罗马尼亚硬拉 | ✅ |
-| 臀 | 杠铃臀推 | ✅ |
-| 小腿 | 站姿提踵、坐姿提踵 | ✅ |
-| 腹上 | 绳索跪姿卷腹 | ✅ 龙门架 |
-| 腹下 | 悬垂举腿 | ✅ 引体杆 |
-| 腹横肌 | 健腹轮 | ✅ |
+| 上胸 | 上斜杠铃/哑铃卧推 | |
+| 中胸 | 平板杠铃/哑铃卧推 | |
+| 肩前束 | 坐姿哑铃推举 / 杠铃站姿推举 | |
+| 肩中束 | 哑铃侧平举 | |
+| 肱三头 | 窄距杠铃卧推、碎颅者 | |
+| 背阔肌宽度 | 引体向上、高位下拉 | |
+| 背阔肌厚度 | 单臂哑铃划船、T杠划船 | |
+| 上背外侧 | 绳索面拉 | |
+| 下背 | 传统硬拉 | |
+| 股四头 | 杠铃深蹲、45度倒蹬机 | |
+| 腘绳肌 | 罗马尼亚硬拉 | |
+| 臀 | 杠铃臀推 | |
+| 小腿 | 站姿提踵、坐姿提踵 | |
+| 腹上 | 绳索跪姿卷腹 | |
+| 腹下 | 悬垂举腿 | |
+| 腹横肌 | 健腹轮 | |
 
 ## ⭐⭐⭐⭐ 强烈推荐（A-Tier）
 
-蝴蝶机夹胸 ✅、绳索大飞鸟 ✅ 龙门架、绳索单侧平举 ✅ 龙门架、绳索下压 ✅ 龙门架、直臂下压 ✅ 龙门架、站姿侧平举机 ✅、剪刀拉背 ✅、宽握高位下拉 ✅、俯身侧平举 ✅、早安式体前屈 🔄、屈腿硬拉 ✅、坐姿腿屈伸 ✅、杠铃前蹲 🔄、俯卧腿弯举 ✅、坐姿夹腿机 ✅、宽距相扑硬拉 ✅、杠铃登阶 ✅、弓步走 ✅、坐姿髋外展 ✅、保加利亚剪蹲 ✅、集中弯举 ✅、宽距杠铃弯举 ✅、窄距直杆弯举 ✅、锤式弯举 ✅、反握杠铃弯举 ✅、哑铃屈臂上拉 ✅、反向卷腹 ✅、俄罗斯转体 ✅、侧撑 ✅、绳索伐木 ✅ 龙门架、死虫式 ✅、平板支撑 ✅
+蝴蝶机夹胸、绳索大飞鸟、绳索单侧平举、绳索下压、直臂下压、站姿侧平举机、剪刀拉背、宽握高位下拉、俯身侧平举、早安式体前屈、屈腿硬拉、坐姿腿屈伸、杠铃前蹲、俯卧腿弯举、坐姿夹腿机、宽距相扑硬拉、杠铃登阶、弓步走、坐姿髋外展、保加利亚剪蹲、集中弯举、宽距杠铃弯举、窄距直杆弯举、锤式弯举、反握杠铃弯举、哑铃屈臂上拉、反向卷腹、俄罗斯转体、侧撑、绳索伐木、死虫式、平板支撑
 
 ## ⭐⭐⭐ 推荐（B-Tier）
 
-上斜哑铃飞鸟 ✅、下斜杠铃卧推 ✅、阿诺德推举 ✅、器械推胸 ✅、器械推举 ✅、高位绳索弯举 ✅ 龙门架、Y字前平举 ✅、基础卷腹 ✅、登山者 ✅、真空腹 ✅
+上斜哑铃飞鸟、下斜杠铃卧推、阿诺德推举、器械推胸、器械推举、高位绳索弯举、Y字前平举、基础卷腹、登山者、真空腹
 
 ---
 
