@@ -4,6 +4,44 @@ const base = "https://marcmayol.com/exercise-api";
 const catalog = await fetch(`${base}/v1/dataset.json`).then((r) => r.json());
 const bySlug = new Map(catalog.exercises.map((x) => [x.slug, x]));
 
+const medical = {
+  "三角肌前束": { ids:["FMA34677"], view:"front" },
+  "三角肌中束": { ids:["FMA34678"], view:"front" },
+  "三角肌后束": { ids:["FMA34679"], view:"back" },
+  "胸大肌锁骨部（上胸）": { ids:["FMA34687"], view:"front" },
+  "胸大肌胸肋部（整体／中部偏重）": { ids:["FMA34696"], view:"front" },
+  "胸大肌胸肋部下方纤维偏重": { ids:["FMA34699"], view:"front" },
+  "肱二头肌": { ids:["FMA37682","FMA37683"], view:"front" },
+  "肱肌／肱桡肌": { ids:["FMA37667","FMA38485"], view:"front" },
+  "肱三头长头": { ids:["FMA37692"], view:"back" },
+  "肱三头外侧头／内侧头": { ids:["FMA37693","FMA37694"], view:"back" },
+  "斜方肌中下束／菱形肌（背厚）": { ids:["FMA32555","FMA32556","FMA13379","FMA13380"], view:"back" },
+  "斜方肌上束": { ids:["FMA32557"], view:"back" },
+  "股四头肌": { ids:["FMA22430","FMA22431","FMA22432","FMA22433"], view:"front" },
+  "腘绳肌": { ids:["FMA22357","FMA22438","FMA45887","FMA45890"], view:"back" },
+  "臀大肌": { ids:["FMA22314"], view:"back" },
+  "臀中肌／髋外展肌群": { ids:["FMA22315","FMA22317"], view:"back" },
+  "髋内收肌群": { ids:["FMA22441","FMA22442","FMA22443"], view:"front" },
+  "腓肠肌": { ids:["FMA45956","FMA45959"], view:"back" },
+  "比目鱼肌": { ids:["FMA22542"], view:"back" },
+  "腹斜肌／抗旋转": { ids:["FMA13335"], view:"front" },
+};
+
+const anatomyDir = "assets/anatomy-medical";
+fs.mkdirSync(anatomyDir, { recursive: true });
+const safeName = (s) => [...s].map((c) => /[A-Za-z0-9]/.test(c) ? c : `u${c.codePointAt(0).toString(16)}`).join("-");
+for (const [group, spec] of Object.entries(medical)) {
+  const config = {
+    Window:{ImageWidth:900,ImageHeight:900,BackgroundColor:"FFFFFF",BackgroundOpacity:100},
+    Camera:{CameraMode:spec.view},
+    Part:spec.ids.map((PartID) => ({PartID,PartColor:"DC2626",PartOpacity:1})),
+  };
+  const url = `https://lifesciencedb.jp/bp3d/API/image?${encodeURIComponent(JSON.stringify(config))}`;
+  const response = await fetch(url);
+  if (!response.ok) throw new Error(`Anatomography ${response.status}: ${group}`);
+  fs.writeFileSync(`${anatomyDir}/${safeName(group)}.png`, Buffer.from(await response.arrayBuffer()));
+}
+
 const sections = [
   ["肩膀", [
     ["三角肌前束", [["seated-dumbbell-overhead-shoulder-press","坐姿哑铃推举"],["barbell-overhead-press","杠铃推举"],["machine-shoulder-press","器械肩推"],["cable-front-raise","绳索前平举"]]],
@@ -44,18 +82,19 @@ const sections = [
 ];
 
 const esc = (s) => String(s).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;");
-const cards = (actions) => `<table><tbody><tr>${actions.map(([slug, zh], i) => {
+const cards = (actions, group) => `<table><tbody><tr>${actions.map(([slug, zh], i) => {
   const ex = bySlug.get(slug); if (!ex) throw new Error(`Missing exercise: ${slug}`);
   const pri = ex.primaryMuscles.map((m) => m.en).join("、");
   const sec = ex.secondaryMuscles.map((m) => m.en).join("、") || "—";
-  return `<td width="25%" valign="top"><table><tbody><tr><th>#${i+1} ${esc(zh)}<br><sub>${esc(ex.name.en)}</sub></th></tr><tr><td align="center"><img src="${ex.images.male}" width="250" alt="${esc(zh)}动作起止位"></td></tr><tr><td align="center"><img src="${ex.muscleMaps.male}" width="110" alt="${esc(zh)}肌肉图"></td></tr><tr><td><b>主要：</b>${esc(pri)}<br><b>次要：</b>${esc(sec)}</td></tr></tbody></table></td>`;
+  const anatomy = medical[group] ? `${anatomyDir}/${safeName(group)}.png` : ex.muscleMaps.male;
+  return `<td width="25%" valign="top"><table><tbody><tr><th>#${i+1} ${esc(zh)}<br><sub>${esc(ex.name.en)}</sub></th></tr><tr><td align="center"><img src="${ex.images.male}" width="250" alt="${esc(zh)}动作起止位"></td></tr><tr><td align="center"><img src="${anatomy}" width="160" alt="${esc(group)}医学解剖图"></td></tr><tr><td><b>主要：</b>${esc(pri)}<br><b>次要：</b>${esc(sec)}</td></tr></tbody></table></td>`;
 }).join("")}</tr></tbody></table>`;
 
 let out = `# FIT：按精确肌群选择动作\n\n> 每个外层表格的一行对应一个精确肌群；行内动作按推荐优先级从左到右排列。每张动作图已经同时展示起始位与结束位，下方肌肉图用深色表示主要刺激、浅色表示次要参与。\n\n`;
 for (const [section, groups] of sections) {
   out += `<h2>${section}</h2>\n<table><thead><tr><th width="15%">精确肌群</th><th>动作（按优先级）</th></tr></thead><tbody>\n`;
-  for (const [group, actions] of groups) out += `<tr><th valign="top">${group}</th><td>${cards(actions)}</td></tr>\n`;
+  for (const [group, actions] of groups) out += `<tr><th valign="top">${group}</th><td>${cards(actions, group)}</td></tr>\n`;
   out += `</tbody></table>\n\n`;
 }
-out += `<h2>图片与许可</h2>\n<p>动作插画、动作数据与肌肉图来自 <a href="https://marcmayol.com/exercise-api/">Exercise API by Marc Mayol</a>，经作者许可可免费使用（包括商业用途），要求署名并链接来源。肌肉图基于 MIT 许可的 react-native-body-highlighter。图片仅用于动作辨认与训练规划，不替代医疗建议或现场技术指导。</p>\n`;
+out += `<h2>图片与许可</h2>\n<p>动作插画与动作数据来自 <a href="https://marcmayol.com/exercise-api/">Exercise API by Marc Mayol</a>。医学解剖图由 <a href="https://lifesciencedb.jp/bp3d/">BodyParts3D / Anatomography</a> 渲染，并根据 FMA 解剖标识将目标肌肉标红；BodyParts3D © The Database Center for Life Science，按 CC BY-SA 2.1 Japan 使用。源模型暂不具备的结构保留 Exercise API 肌肉图。图片仅用于动作辨认与训练规划，不替代医疗建议或现场技术指导。</p>\n`;
 fs.writeFileSync("README.md", out);
