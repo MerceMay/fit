@@ -1,0 +1,7 @@
+This repository includes modified anatomical SVG data from Body Muscles.
+Copyright 2024 Ivan Vulović
+https://github.com/vulovix/body-muscles
+Licensed under the Apache License, Version 2.0.
+
+Modifications: SVG paths were converted into static diagrams; selected muscle
+regions are highlighted in red and non-selected regions in gray.
