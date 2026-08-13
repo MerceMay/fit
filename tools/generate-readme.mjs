@@ -37,7 +37,11 @@ fs.mkdirSync(anatomyDir, { recursive: true });
 const safeName = (s) => [...s].map((c) => /[A-Za-z0-9]/.test(c) ? c : `u${c.codePointAt(0).toString(16)}`).join("-");
 for (const [group, spec] of Object.entries(medical)) {
   let svg = fs.readFileSync(`assets/anatomy-atlas-${spec.view}.svg`, "utf8");
-  svg = svg.replace(/viewBox="[^"]+"/, `viewBox="${spec.box}"`).replace(/<svg /, '<svg preserveAspectRatio="xMidYMid meet" ');
+  svg = svg
+    .replace(/width="[^"]+"/, 'width="600"')
+    .replace(/height="[^"]+"/, 'height="600"')
+    .replace(/viewBox="[^"]+"/, `viewBox="${spec.box}"`)
+    .replace(/<svg /, '<svg preserveAspectRatio="xMidYMid meet" ');
   const selectors = spec.ids.flatMap((id) => [`[id^="${id}"]`, `[id*="_${id}"]`]).join(",");
   svg = svg.replace("</svg>", `<style>${selectors}{fill:#dc2626!important;stroke:#991b1b!important;stroke-width:1.2}</style></svg>`);
   fs.writeFileSync(`${anatomyDir}/${safeName(group)}.svg`, svg);
