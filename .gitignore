@@ -3,5 +3,6 @@ Thumbs.db
 *.pdf
 *.jpg
 *.png
+!assets/anatomy-medical/*.png
 node_modules/
 
