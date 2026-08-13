@@ -4,5 +4,6 @@ Thumbs.db
 *.jpg
 *.png
 !assets/anatomy-medical/*.png
+!assets/warmup/*.png
 node_modules/
 

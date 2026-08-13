@@ -35,8 +35,8 @@ for (const [group, spec] of Object.entries(medical)) {
     Window:{ImageWidth:900,ImageHeight:900,BackgroundColor:"FFFFFF",BackgroundOpacity:100},
     Camera:{CameraMode:spec.view},
     Part:[
-      {PartID:"FMA5018",PartColor:"CBD5E1",PartOpacity:0.22},
-      {PartID:"FMA5022",PartColor:"D1D5DB",PartOpacity:0.18},
+      {PartID:"FMA5018",PartColor:"64748B",PartOpacity:0.72},
+      {PartID:"FMA5022",PartColor:"A3A3A3",PartOpacity:0.48},
       ...spec.ids.map((PartID) => ({PartID,PartColor:"DC2626",PartOpacity:1})),
     ],
   };
@@ -119,9 +119,9 @@ const warmupGroups = [
   ["胸肩前侧", "胸大肌锁骨部（上胸）", [["doorway-chest-stretch","门框动态扩胸","门框／立柱","1 × 每侧 8–12"],["low-cable-fly","单片重量低位夹胸","龙门架","1 × 12–15"],["cable-shoulder-press","单片重量绳索肩推","龙门架","1 × 10–15"],["push-ups","慢速俯卧撑","瑜伽垫","1 × 6–12"]]],
   ["背阔／肩胛下沉", "背阔肌／大圆肌（背宽）", [["straight-arm-pulldown","单片重量直臂下压","龙门架","1–2 × 12–15"],["cable-pullover","单片重量绳索上拉","龙门架","1 × 12–15"],["neutral-grip-pulldown","轻重量肩胛下沉下拉","高位下拉器","1 × 10–12"],["seated-cable-back-rows","单片重量坐姿划船","龙门架","1 × 12–15"]]],
   ["髋关节／臀部", "臀中肌／髋外展肌群", [["hip-90-90","90/90 髋切换","瑜伽垫","1 × 每侧 6–10"],["figure-4-stretch","动态 4 字臀部活动","瑜伽垫","1 × 每侧 8–12"],["glute-bridge","臀桥激活","瑜伽垫／弹力带","1–2 × 10–15"],["cable-hip-abduction","单片重量髋外展","龙门架","1 × 每侧 12–15"]]],
-  ["股四头／膝关节", "股四头肌", [["custom:foam-quad","泡沫轴滚股四头","泡沫轴＋瑜伽垫","每侧 30–45 秒","https://www.clker.com/cliparts/4/f/6/4/1513802389815757529foam-rolling-quads.med.png"],["seated-leg-extensions","单片重量腿屈伸","腿屈伸机","1 × 12–15"],["goblet-squats","轻高脚杯深蹲","哑铃／壶铃","1 × 8–12"],["barbell-squat","空杆深蹲","深蹲架","1 × 8–12"]]],
+  ["股四头／膝关节", "股四头肌", [["custom:foam-quad","泡沫轴滚股四头","泡沫轴＋瑜伽垫","每侧 30–45 秒","assets/warmup/foam-roll-quadriceps.png"],["seated-leg-extensions","单片重量腿屈伸","腿屈伸机","1 × 12–15"],["goblet-squats","轻高脚杯深蹲","哑铃／壶铃","1 × 8–12"],["barbell-squat","空杆深蹲","深蹲架","1 × 8–12"]]],
   ["腘绳肌／髋铰链", "腘绳肌", [["supine-hamstring-stretch","仰卧动态腘绳肌活动","瑜伽垫／弹力带","1 × 每侧 8–12"],["hip-hinge-dowel","木棍三点髋铰链","木棍／PVC 杆","1 × 8–12"],["seated-leg-curl","单片重量坐姿腿弯举","腿弯举机","1 × 12–15"],["romanian-deadlift","空杆罗马尼亚硬拉","空杆","1 × 8–10"]]],
-  ["踝关节／小腿", "腓肠肌", [["ankle-dorsiflexion-wall","墙前踝背屈","墙面／弹力带","1 × 每侧 10–15"],["calf-stretch-wall","动态靠墙小腿活动","墙面","1 × 每侧 8–12"],["standing-calf-raises","慢速徒手提踵","台阶／地面","1 × 12–15"],["custom:foot-ball","足底筋膜球滚动","筋膜球／网球","每侧 30–45 秒","https://www.clker.com/cliparts/8/e/d/9/1516502262540397980free-clipart-foot-massage.med.png"]]],
+  ["踝关节／小腿", "腓肠肌", [["ankle-dorsiflexion-wall","墙前踝背屈","墙面／弹力带","1 × 每侧 10–15"],["calf-stretch-wall","动态靠墙小腿活动","墙面","1 × 每侧 8–12"],["standing-calf-raises","慢速徒手提踵","台阶／地面","1 × 12–15"],["custom:foot-ball","足底筋膜球滚动","筋膜球／网球","每侧 30–45 秒","assets/warmup/massage-ball-plantar-fascia.png"]]],
   ["核心／腰椎稳定", "深层核心／抗伸展", [["dead-bug","死虫式","瑜伽垫","1 × 每侧 6–10"],["bird-dog","鸟狗式","瑜伽垫","1 × 每侧 6–10"],["pallof-press","单片重量 Pallof Press","龙门架／弹力带","1 × 每侧 8–12"],["plank","短时平板支撑","瑜伽垫","1 × 20–30 秒"]]],
 ];
 const warmupCards = (actions) => `<table><tbody><tr>${actions.map(([slug,zh,equipment,dose,customImage],i) => {
@@ -133,17 +133,7 @@ const warmupCards = (actions) => `<table><tbody><tr>${actions.map(([slug,zh,equi
 
 let out = `# FIT：肌群动作库、热身与五练 PPL
 
-## 第零节：怎么看这份计划
-
-| 标记 | 含义 |
-|---|---|
-| 解剖图红色 | 当前行的目标肌肉 |
-| 解剖图灰色 | 骨骼与周围肌肉的位置参照 |
-| #1 → #4 | 动作综合推荐顺序；按需选用，不是把同行全部做完 |
-| 工作组 | 真正用于记录和渐进的正式组；递增热身组不计算在内 |
-| RIR | 一组结束时估计还能规范完成的次数；例如 2 RIR 表示还能再做约 2 次 |
-
-# 第一节：精确肌群与动作库
+# 肌群与对应动作
 
 `;
 for (const [section, groups] of sections) {
@@ -178,7 +168,7 @@ out += `</tbody></table>
 <h2>Pull A</h2>
 <table><thead><tr><th colspan="4">专项准备（约 8–12 分钟）</th></tr><tr><th>#</th><th>动作</th><th>剂量</th><th>目的</th></tr></thead><tbody><tr><td>1</td><td>四点跪姿胸椎旋转</td><td>1 × 每侧 8–10</td><td>恢复胸椎旋转</td></tr><tr><td>2</td><td>单片重量直臂下压</td><td>1 × 12–15</td><td>背阔与肩胛下沉</td></tr><tr><td>3</td><td>单片重量坐姿划船</td><td>1 × 12–15</td><td>上背后缩控制</td></tr><tr><td>4</td><td>引体／下拉递增组</td><td>轻重量 12；约 60% × 6–8；约 75% × 3–5</td><td>正式组前保持二头和握力新鲜</td></tr></tbody></table>
 <table><thead><tr><th>#</th><th>动作</th><th>正式组 × 次数</th><th>休息</th><th>RIR</th></tr></thead><tbody>
-<tr><td>1</td><td>引体向上／中立握下拉</td><td>4 × 6–10</td><td>2 分钟</td><td>1–2</td></tr><tr><td>2</td><td>胸托划船／T 杠划船</td><td>4 × 6–12</td><td>2 分钟</td><td>1–2</td></tr><tr><td>3</td><td>直臂下拉</td><td>3 × 10–15</td><td>60–90 秒</td><td>1–2</td></tr><tr><td>4</td><td>反向飞鸟</td><td>3 × 12–20</td><td>60–90 秒</td><td>0–2</td></tr><tr><td>5</td><td>牧师凳弯举</td><td>3 × 8–12</td><td>60–90 秒</td><td>0–2</td></tr><tr><td>6</td><td>锤式弯举</td><td>2 × 10–15</td><td>60–90 秒</td><td>0–2</td></tr>
+<tr><td>1</td><td>引体向上／中立握下拉</td><td>4 × 6–10</td><td>2 分钟</td><td>1–2</td></tr><tr><td>2</td><td>胸托划船／T 杠划船</td><td>4 × 6–12</td><td>2 分钟</td><td>1–2</td></tr><tr><td>3</td><td>直臂下拉</td><td>3 × 10–15</td><td>60–90 秒</td><td>1–2</td></tr><tr><td>4</td><td>反向飞鸟</td><td>3 × 12–20</td><td>60–90 秒</td><td>0–2</td></tr><tr><td>5</td><td>牧师凳弯举</td><td>3 × 8–12</td><td>60–90 秒</td><td>0–2</td></tr><tr><td>6</td><td>锤式弯举</td><td>2 × 10–15</td><td>60–90 秒</td><td>0–2</td></tr><tr><td>7</td><td>Pallof Press</td><td>3 × 每侧 10–15</td><td>45–60 秒</td><td>2</td></tr>
 </tbody></table>
 <h2>Legs</h2>
 <table><thead><tr><th colspan="4">专项准备（约 10–15 分钟）</th></tr><tr><th>#</th><th>动作</th><th>剂量</th><th>目的</th></tr></thead><tbody><tr><td>1</td><td>泡沫轴滚股四头</td><td>每侧 30–45 秒</td><td>仅处理明显紧张区域，不长时间碾压</td></tr><tr><td>2</td><td>90/90 髋切换</td><td>1 × 每侧 6–10</td><td>髋内外旋准备</td></tr><tr><td>3</td><td>墙前踝背屈</td><td>1 × 每侧 10–15</td><td>为深蹲深度准备踝关节</td></tr><tr><td>4</td><td>单片重量坐姿腿弯举</td><td>1 × 12–15</td><td>腘绳肌与膝后侧升温</td></tr><tr><td>5</td><td>杠铃深蹲递增组</td><td>空杆 10–15；50% × 6–8；70% × 3–5；需要时 80% × 1–3</td><td>排练站距、深度与腹压</td></tr></tbody></table>
@@ -188,7 +178,7 @@ out += `</tbody></table>
 <h2>Push B</h2>
 <table><thead><tr><th colspan="4">专项准备（约 8–12 分钟）</th></tr><tr><th>#</th><th>动作</th><th>剂量</th><th>目的</th></tr></thead><tbody><tr><td>1</td><td>侧卧开书式</td><td>1 × 每侧 8–10</td><td>胸椎与胸肩前侧活动</td></tr><tr><td>2</td><td>Y-T-W 肩胛控制</td><td>1 × 每形态 6–8</td><td>下斜方肌、后束与肩袖准备</td></tr><tr><td>3</td><td>单片重量绳索肩推</td><td>1 × 10–15</td><td>轻负荷寻找肩胛上旋轨迹</td></tr><tr><td>4</td><td>上斜哑铃卧推递增组</td><td>轻哑铃 10–12；约 60% × 6–8；约 75% × 3–5</td><td>排练第一正式动作</td></tr></tbody></table>
 <table><thead><tr><th>#</th><th>动作</th><th>正式组 × 次数</th><th>休息</th><th>RIR</th></tr></thead><tbody>
-<tr><td>1</td><td>上斜哑铃卧推</td><td>4 × 6–10</td><td>2–3 分钟</td><td>1–2</td></tr><tr><td>2</td><td>坐姿哑铃推举</td><td>3 × 6–10</td><td>2 分钟</td><td>1–2</td></tr><tr><td>3</td><td>器械夹胸／绳索夹胸</td><td>3 × 10–15</td><td>60–90 秒</td><td>0–2</td></tr><tr><td>4</td><td>哑铃侧平举</td><td>4 × 12–20</td><td>60–90 秒</td><td>0–2</td></tr><tr><td>5</td><td>仰卧臂屈伸</td><td>3 × 8–12</td><td>60–90 秒</td><td>0–2</td></tr><tr><td>6</td><td>绳索下压</td><td>2 × 12–20</td><td>60 秒</td><td>0–1</td></tr>
+<tr><td>1</td><td>上斜哑铃卧推</td><td>4 × 6–10</td><td>2–3 分钟</td><td>1–2</td></tr><tr><td>2</td><td>坐姿哑铃推举</td><td>3 × 6–10</td><td>2 分钟</td><td>1–2</td></tr><tr><td>3</td><td>器械夹胸／绳索夹胸</td><td>3 × 10–15</td><td>60–90 秒</td><td>0–2</td></tr><tr><td>4</td><td>哑铃侧平举</td><td>4 × 12–20</td><td>60–90 秒</td><td>0–2</td></tr><tr><td>5</td><td>仰卧臂屈伸</td><td>3 × 8–12</td><td>60–90 秒</td><td>0–2</td></tr><tr><td>6</td><td>绳索下压</td><td>2 × 12–20</td><td>60 秒</td><td>0–1</td></tr><tr><td>7</td><td>悬垂举腿</td><td>3 × 8–15</td><td>60–90 秒</td><td>1–2</td></tr>
 </tbody></table>
 <h2>Pull B</h2>
 <table><thead><tr><th colspan="4">专项准备（约 8–12 分钟）</th></tr><tr><th>#</th><th>动作</th><th>剂量</th><th>目的</th></tr></thead><tbody><tr><td>1</td><td>猫牛式</td><td>1 × 8–12</td><td>脊柱分节活动</td></tr><tr><td>2</td><td>单片重量绳索面拉</td><td>1 × 15–20</td><td>后束、肩袖与上背准备</td></tr><tr><td>3</td><td>单片重量直臂下压</td><td>1 × 12–15</td><td>建立背阔发力感觉</td></tr><tr><td>4</td><td>中立握下拉递增组</td><td>轻重量 12；约 60% × 6–8；约 75% × 3–5</td><td>正式组前保持握力和二头新鲜</td></tr></tbody></table>
@@ -197,7 +187,27 @@ out += `</tbody></table>
 </tbody></table>
 
 <h2>执行与优化</h2>
-<ul><li><b>递增：</b>先在同一重量下把所有组做到次数上限；仍达到目标 RIR 时，再增加最小重量。加重后从次数下限重新开始。</li><li><b>训练量：</b>胸、背每周约 14–18 个直接工作组；肩和手臂还会从复合动作得到额外刺激，因此不继续盲目加组。</li><li><b>核心：</b>固定安排在 Push A、Legs、Pull B 末尾；不需要每天高量训练腹部。</li><li><b>腿日恢复：</b>一周只练一次腿，当前约 22 个腿臀小腿工作组已经足够。若训练超过 100 分钟，先删臀推 1 组以及两种提踵各 1 组。</li><li><b>时间不足：</b>始终保留当天前两个复合动作；随后优先保留侧平举／后束、手臂各一个动作。先删同功能的第二个孤立动作。</li><li><b>传统硬拉：</b>若目标包含硬拉专项力量，可在 Pull A 开头做 2–3 × 3–5，并删除当天一个划船动作；纯增肌不强制加入。</li><li><b>减量：</b>连续两周表现下降、关节持续不适或睡眠与疲劳明显恶化时，用一周把正式组减半、重量降低约 10–15%，并保留 3–4 RIR。</li><li><b>替换：</b>疼痛、器械缺失或连续 3–4 周无法渐进时，换成第一节同一肌群的下一优先级动作；不要同时增加动作数量。</li></ul>
+<ul><li><b>递增：</b>先在同一重量下把所有组做到次数上限；仍达到目标 RIR 时，再增加最小重量。加重后从次数下限重新开始。</li><li><b>训练量：</b>胸、背每周约 14–18 个直接工作组；肩和手臂还会从复合动作得到额外刺激，因此不继续盲目加组。</li><li><b>核心：</b>五个训练日都把腹肌放在最后，各做 2–3 组；屈曲、抗旋转、抗伸展和髋屈曲动作轮换。</li><li><b>腿日恢复：</b>一周只练一次腿，当前约 22 个腿臀小腿工作组已经足够。若训练超过 100 分钟，先删臀推 1 组以及两种提踵各 1 组。</li><li><b>时间不足：</b>始终保留当天前两个复合动作；随后优先保留侧平举／后束、手臂各一个动作。先删同功能的第二个孤立动作，但保留末尾腹肌。</li><li><b>传统硬拉：</b>若目标包含硬拉专项力量，可在 Pull A 开头做 2–3 × 3–5，并删除当天一个划船动作；纯增肌不强制加入。</li><li><b>减量：</b>连续两周表现下降、关节持续不适或睡眠与疲劳明显恶化时，用一周把正式组减半、重量降低约 10–15%，并保留 3–4 RIR。</li><li><b>替换：</b>疼痛、器械缺失或连续 3–4 周无法渐进时，换成“肌群与对应动作”中同一肌群的下一优先级动作；不要同时增加动作数量。</li></ul>
 `;
-out += `<h2>图片与许可</h2>\n<p>动作插画与动作数据主要来自 <a href="https://marcmayol.com/exercise-api/">Exercise API by Marc Mayol</a>；泡沫轴与足底放松补充插画来自 <a href="https://www.clker.com/">Clker 公共领域图库</a>。医学解剖图由 <a href="https://lifesciencedb.jp/bp3d/">BodyParts3D / Anatomography</a> 渲染，并根据 FMA 解剖标识将目标肌肉标红；BodyParts3D © The Database Center for Life Science，按 CC BY-SA 2.1 Japan 使用。源模型暂不具备的结构保留 Exercise API 肌肉图。图片仅用于动作辨认与训练规划，不替代医疗建议或现场技术指导。</p>\n`;
+const planImages = new Map([
+  ["卧推凳胸椎伸展","thoracic-extension-bench"],["单片重量绳索面拉","face-pull"],["单片重量低位夹胸","low-cable-fly"],["杠铃卧推递增组","barbell-bench-press"],
+  ["四点跪姿胸椎旋转","quadruped-thoracic-rotation"],["单片重量直臂下压","straight-arm-pulldown"],["单片重量坐姿划船","seated-cable-back-rows"],["引体／下拉递增组","neutral-grip-pulldown"],
+  ["泡沫轴滚股四头","custom:foam"],["90/90 髋切换","hip-90-90"],["墙前踝背屈","ankle-dorsiflexion-wall"],["单片重量坐姿腿弯举","seated-leg-curl"],["杠铃深蹲递增组","barbell-squat"],
+  ["侧卧开书式","open-book-stretch"],["Y-T-W 肩胛控制","y-t-w-raise"],["单片重量绳索肩推","cable-shoulder-press"],["上斜哑铃卧推递增组","incline-dumbbell-press"],
+  ["猫牛式","cat-cow"],["中立握下拉递增组","neutral-grip-pulldown"],
+  ["杠铃平板卧推","barbell-bench-press"],["上斜哑铃卧推","incline-dumbbell-press"],["绳索侧平举","cable-lateral-raises"],["绳索过头臂屈伸","cable-overhead-triceps-extension"],["绳索下压","triceps-pushdown"],["绳索卷腹","cable-crunch"],
+  ["引体向上／中立握下拉","pull-ups"],["胸托划船／T 杠划船","t-bar-row"],["直臂下拉","straight-arm-pulldown"],["反向飞鸟","reverse-fly"],["牧师凳弯举","preacher-curl"],["锤式弯举","dumbbell-hammer-biceps-curl"],
+  ["杠铃深蹲","barbell-squat"],["罗马尼亚硬拉","romanian-deadlift"],["腿屈伸","seated-leg-extensions"],["坐姿腿弯举","seated-leg-curl"],["杠铃臀推","barbell-hip-thrust"],["站姿提踵","standing-calf-raises"],["坐姿提踵","seated-calf-raises"],["死虫式","dead-bug"],
+  ["坐姿哑铃推举","seated-dumbbell-overhead-shoulder-press"],["器械夹胸／绳索夹胸","butterflies"],["哑铃侧平举","dumbbell-lateral-raises"],["仰卧臂屈伸","skull-crusher"],
+  ["中立握高位下拉","neutral-grip-pulldown"],["坐姿绳索划船","seated-cable-back-rows"],["单臂哑铃／绳索划船","dumbbell-row"],["绳索面拉","face-pull"],["上斜哑铃弯举","incline-dumbbell-curl"],["健腹轮","ab-wheel-rollout"],["Pallof Press","pallof-press"],["悬垂举腿","hanging-leg-raise"],
+]);
+out = out.replaceAll('<th colspan="4">专项准备', '<th colspan="5">专项准备')
+  .replaceAll('<th>动作</th><th>剂量</th>', '<th>动作</th><th>示意图</th><th>剂量</th>')
+  .replaceAll('<th>动作</th><th>正式组 × 次数</th>', '<th>动作</th><th>示意图</th><th>正式组 × 次数</th>');
+for (const [name, slug] of planImages) {
+  const image = slug === "custom:foam" ? "assets/warmup/foam-roll-quadriceps.png" : bySlug.get(slug)?.images.male;
+  if (!image) throw new Error(`Missing plan image: ${name} / ${slug}`);
+  out = out.replaceAll(`<td>${name}</td><td>`, `<td>${name}</td><td align="center"><img src="${image}" width="180" alt="${name}动作示意图"></td><td>`);
+}
+out += `<h2>图片与许可</h2>\n<p>动作插画与动作数据主要来自 <a href="https://marcmayol.com/exercise-api/">Exercise API by Marc Mayol</a>；图库缺少的泡沫轴与筋膜球动作使用同一视觉规范补绘并保存在本项目。医学解剖图由 <a href="https://lifesciencedb.jp/bp3d/">BodyParts3D / Anatomography</a> 渲染，并根据 FMA 解剖标识将目标肌肉标红；BodyParts3D © The Database Center for Life Science，按 CC BY-SA 2.1 Japan 使用。源模型暂不具备的结构保留 Exercise API 肌肉图。图片仅用于动作辨认与训练规划，不替代医疗建议或现场技术指导。</p>\n`;
 fs.writeFileSync("README.md", out);
