@@ -143,60 +143,60 @@ const warmupCards = (actions) => {
   return `<table><tbody>${pairRows(cells)}</tbody></table>`;
 };
 
-let out = `# FIT：肌群动作库、热身与五练 PPL
+let out = `<h1 align="center">FIT：肌群动作库、热身与五练 PPL</h1>
 
-# 肌群与对应动作
+<h1 align="center">肌群与对应动作</h1>
 
 `;
 for (const [section, groups] of sections) {
-  out += `<h2>${section}</h2>\n`;
+  out += `<h2 align="center">${section}</h2>\n`;
   for (const [group, actions] of groups) {
     const anatomy = medical[group] ? `${anatomyDir}/${safeName(group)}.svg` : bySlug.get(actions[0][0]).muscleMaps.male;
-    out += `<h3>${group}</h3>\n<p><img src="${anatomy}" width="280" alt="${esc(group)}解剖定位图"></p>\n${cards(actions, group)}\n`;
+    out += `<h3 align="center">${group}</h3>\n<p align="center"><img src="${anatomy}" width="180" alt="${esc(group)}解剖定位图"></p>\n${cards(actions, group)}\n`;
   }
   out += `\n`;
 }
-out += `<h1>第二节：专项准备动作库</h1>
+out += `<h1 align="center">第二节：专项准备动作库</h1>
 <p>本节只用于按区域查动作：优先收录瑜伽垫动态活动、泡沫轴／筋膜球、弹力带、龙门架单片重量和空杆动作。一次训练从相关行选择少量动作即可，不需要整行全部完成。</p>
 `;
 for (const [region, anatomyGroup, actions] of warmupGroups) {
   const first = actions.find(([slug]) => !slug.startsWith("custom:"));
   const anatomy = medical[anatomyGroup] ? `${anatomyDir}/${safeName(anatomyGroup)}.svg` : bySlug.get(first[0]).muscleMaps.male;
-  out += `<h3>${esc(region)}</h3>\n<p><img src="${anatomy}" width="280" alt="${esc(region)}关联肌群图"></p>\n${warmupCards(actions)}\n`;
+  out += `<h3 align="center">${esc(region)}</h3>\n<p align="center"><img src="${anatomy}" width="180" alt="${esc(region)}关联肌群图"></p>\n${warmupCards(actions)}\n`;
 }
-out += `<h1>第三节：五练 PPL 计划</h1>
+out += `<h1 align="center">第三节：五练 PPL 计划</h1>
 <p>周结构为 Push A / Pull A / Legs / 休息 / Push B / Pull B / 休息。两个 Push 和两个 Pull 保留必要的高收益重复动作，不为追求花样强行完全错开。</p>
 <table><thead><tr><th>日程</th><th>训练</th><th>重点</th></tr></thead><tbody>
 <tr><td>周一</td><td>Push A</td><td>平板卧推＋肩中束＋三头长头</td></tr><tr><td>周二</td><td>Pull A</td><td>垂直拉＋背厚＋二头</td></tr><tr><td>周三</td><td>Legs</td><td>股四、腘绳、臀、小腿完整覆盖</td></tr><tr><td>周四</td><td>休息</td><td>恢复、散步或轻度活动</td></tr><tr><td>周五</td><td>Push B</td><td>上胸＋肩推＋三头</td></tr><tr><td>周六</td><td>Pull B</td><td>背阔肌＋上背＋后束＋二头</td></tr><tr><td>周日</td><td>休息</td><td>恢复</td></tr>
 </tbody></table>
 
-<h2>Push A</h2>
+<h2 align="center">Push A</h2>
 <table><thead><tr><th colspan="4">专项准备（约 8–12 分钟）</th></tr><tr><th>#</th><th>动作</th><th>剂量</th><th>目的</th></tr></thead><tbody><tr><td>1</td><td>卧推凳胸椎伸展</td><td>1 × 8–12</td><td>打开胸椎伸展位</td></tr><tr><td>2</td><td>单片重量绳索面拉</td><td>1 × 15–20</td><td>肩袖与肩胛控制</td></tr><tr><td>3</td><td>单片重量低位夹胸</td><td>1 × 12–15</td><td>建立胸肌收缩感觉</td></tr><tr><td>4</td><td>杠铃卧推递增组</td><td>空杆 10–15；50% × 6–8；70% × 3–5；需要时 80% × 1–3</td><td>排练正式动作，均远离力竭</td></tr></tbody></table>
 <table><thead><tr><th>#</th><th>动作</th><th>正式组 × 次数</th><th>休息</th><th>RIR</th></tr></thead><tbody>
 <tr><td>1</td><td>杠铃平板卧推</td><td>4 × 5–8</td><td>2–3 分钟</td><td>2</td></tr><tr><td>2</td><td>上斜哑铃卧推</td><td>3 × 8–12</td><td>2 分钟</td><td>1–2</td></tr><tr><td>3</td><td>绳索侧平举</td><td>4 × 12–20</td><td>60–90 秒</td><td>0–2</td></tr><tr><td>4</td><td>绳索过头臂屈伸</td><td>3 × 10–15</td><td>60–90 秒</td><td>0–2</td></tr><tr><td>5</td><td>绳索下压</td><td>2 × 10–15</td><td>60–90 秒</td><td>0–1</td></tr><tr><td>6</td><td>绳索卷腹</td><td>3 × 10–15</td><td>60 秒</td><td>1–2</td></tr>
 </tbody></table>
-<h2>Pull A</h2>
+<h2 align="center">Pull A</h2>
 <table><thead><tr><th colspan="4">专项准备（约 8–12 分钟）</th></tr><tr><th>#</th><th>动作</th><th>剂量</th><th>目的</th></tr></thead><tbody><tr><td>1</td><td>四点跪姿胸椎旋转</td><td>1 × 每侧 8–10</td><td>恢复胸椎旋转</td></tr><tr><td>2</td><td>单片重量直臂下压</td><td>1 × 12–15</td><td>背阔与肩胛下沉</td></tr><tr><td>3</td><td>单片重量坐姿划船</td><td>1 × 12–15</td><td>上背后缩控制</td></tr><tr><td>4</td><td>引体／下拉递增组</td><td>轻重量 12；约 60% × 6–8；约 75% × 3–5</td><td>正式组前保持二头和握力新鲜</td></tr></tbody></table>
 <table><thead><tr><th>#</th><th>动作</th><th>正式组 × 次数</th><th>休息</th><th>RIR</th></tr></thead><tbody>
 <tr><td>1</td><td>引体向上／中立握下拉</td><td>4 × 6–10</td><td>2 分钟</td><td>1–2</td></tr><tr><td>2</td><td>胸托划船／T 杠划船</td><td>4 × 6–12</td><td>2 分钟</td><td>1–2</td></tr><tr><td>3</td><td>直臂下拉</td><td>3 × 10–15</td><td>60–90 秒</td><td>1–2</td></tr><tr><td>4</td><td>反向飞鸟</td><td>3 × 12–20</td><td>60–90 秒</td><td>0–2</td></tr><tr><td>5</td><td>牧师凳弯举</td><td>3 × 8–12</td><td>60–90 秒</td><td>0–2</td></tr><tr><td>6</td><td>锤式弯举</td><td>2 × 10–15</td><td>60–90 秒</td><td>0–2</td></tr><tr><td>7</td><td>Pallof Press</td><td>3 × 每侧 10–15</td><td>45–60 秒</td><td>2</td></tr>
 </tbody></table>
-<h2>Legs</h2>
+<h2 align="center">Legs</h2>
 <table><thead><tr><th colspan="4">专项准备（约 10–15 分钟）</th></tr><tr><th>#</th><th>动作</th><th>剂量</th><th>目的</th></tr></thead><tbody><tr><td>1</td><td>泡沫轴滚股四头</td><td>每侧 30–45 秒</td><td>仅处理明显紧张区域，不长时间碾压</td></tr><tr><td>2</td><td>90/90 髋切换</td><td>1 × 每侧 6–10</td><td>髋内外旋准备</td></tr><tr><td>3</td><td>墙前踝背屈</td><td>1 × 每侧 10–15</td><td>为深蹲深度准备踝关节</td></tr><tr><td>4</td><td>单片重量坐姿腿弯举</td><td>1 × 12–15</td><td>腘绳肌与膝后侧升温</td></tr><tr><td>5</td><td>杠铃深蹲递增组</td><td>空杆 10–15；50% × 6–8；70% × 3–5；需要时 80% × 1–3</td><td>排练站距、深度与腹压</td></tr></tbody></table>
 <table><thead><tr><th>#</th><th>动作</th><th>正式组 × 次数</th><th>休息</th><th>RIR</th></tr></thead><tbody>
 <tr><td>1</td><td>杠铃深蹲</td><td>4 × 5–8</td><td>2–3 分钟</td><td>2</td></tr><tr><td>2</td><td>罗马尼亚硬拉</td><td>3 × 6–10</td><td>2–3 分钟</td><td>1–2</td></tr><tr><td>3</td><td>腿屈伸</td><td>3 × 10–15</td><td>60–90 秒</td><td>0–2</td></tr><tr><td>4</td><td>坐姿腿弯举</td><td>3 × 8–15</td><td>60–90 秒</td><td>0–2</td></tr><tr><td>5</td><td>杠铃臀推</td><td>3 × 8–12</td><td>90–120 秒</td><td>1–2</td></tr><tr><td>6</td><td>站姿提踵</td><td>3 × 8–15</td><td>60–90 秒</td><td>0–2</td></tr><tr><td>7</td><td>坐姿提踵</td><td>3 × 12–20</td><td>60–90 秒</td><td>0–2</td></tr><tr><td>8</td><td>死虫式</td><td>2 × 每侧 8–12</td><td>45–60 秒</td><td>动作始终可控</td></tr>
 </tbody></table>
-<h2>Push B</h2>
+<h2 align="center">Push B</h2>
 <table><thead><tr><th colspan="4">专项准备（约 8–12 分钟）</th></tr><tr><th>#</th><th>动作</th><th>剂量</th><th>目的</th></tr></thead><tbody><tr><td>1</td><td>侧卧开书式</td><td>1 × 每侧 8–10</td><td>胸椎与胸肩前侧活动</td></tr><tr><td>2</td><td>Y-T-W 肩胛控制</td><td>1 × 每形态 6–8</td><td>下斜方肌、后束与肩袖准备</td></tr><tr><td>3</td><td>单片重量绳索肩推</td><td>1 × 10–15</td><td>轻负荷寻找肩胛上旋轨迹</td></tr><tr><td>4</td><td>上斜哑铃卧推递增组</td><td>轻哑铃 10–12；约 60% × 6–8；约 75% × 3–5</td><td>排练第一正式动作</td></tr></tbody></table>
 <table><thead><tr><th>#</th><th>动作</th><th>正式组 × 次数</th><th>休息</th><th>RIR</th></tr></thead><tbody>
 <tr><td>1</td><td>上斜哑铃卧推</td><td>4 × 6–10</td><td>2–3 分钟</td><td>1–2</td></tr><tr><td>2</td><td>坐姿哑铃推举</td><td>3 × 6–10</td><td>2 分钟</td><td>1–2</td></tr><tr><td>3</td><td>器械夹胸／绳索夹胸</td><td>3 × 10–15</td><td>60–90 秒</td><td>0–2</td></tr><tr><td>4</td><td>哑铃侧平举</td><td>4 × 12–20</td><td>60–90 秒</td><td>0–2</td></tr><tr><td>5</td><td>仰卧臂屈伸</td><td>3 × 8–12</td><td>60–90 秒</td><td>0–2</td></tr><tr><td>6</td><td>绳索下压</td><td>2 × 12–20</td><td>60 秒</td><td>0–1</td></tr><tr><td>7</td><td>悬垂举腿</td><td>3 × 8–15</td><td>60–90 秒</td><td>1–2</td></tr>
 </tbody></table>
-<h2>Pull B</h2>
+<h2 align="center">Pull B</h2>
 <table><thead><tr><th colspan="4">专项准备（约 8–12 分钟）</th></tr><tr><th>#</th><th>动作</th><th>剂量</th><th>目的</th></tr></thead><tbody><tr><td>1</td><td>猫牛式</td><td>1 × 8–12</td><td>脊柱分节活动</td></tr><tr><td>2</td><td>单片重量绳索面拉</td><td>1 × 15–20</td><td>后束、肩袖与上背准备</td></tr><tr><td>3</td><td>单片重量直臂下压</td><td>1 × 12–15</td><td>建立背阔发力感觉</td></tr><tr><td>4</td><td>中立握下拉递增组</td><td>轻重量 12；约 60% × 6–8；约 75% × 3–5</td><td>正式组前保持握力和二头新鲜</td></tr></tbody></table>
 <table><thead><tr><th>#</th><th>动作</th><th>正式组 × 次数</th><th>休息</th><th>RIR</th></tr></thead><tbody>
 <tr><td>1</td><td>中立握高位下拉</td><td>4 × 8–12</td><td>2 分钟</td><td>1–2</td></tr><tr><td>2</td><td>坐姿绳索划船</td><td>3 × 8–12</td><td>2 分钟</td><td>1–2</td></tr><tr><td>3</td><td>单臂哑铃／绳索划船</td><td>3 × 8–12</td><td>90–120 秒</td><td>1–2</td></tr><tr><td>4</td><td>绳索面拉</td><td>3 × 12–20</td><td>60–90 秒</td><td>0–2</td></tr><tr><td>5</td><td>上斜哑铃弯举</td><td>3 × 8–12</td><td>60–90 秒</td><td>0–2</td></tr><tr><td>6</td><td>锤式弯举</td><td>2 × 10–15</td><td>60–90 秒</td><td>0–2</td></tr><tr><td>7</td><td>健腹轮</td><td>3 × 6–12</td><td>60–90 秒</td><td>1–2</td></tr>
 </tbody></table>
 
-<h2>执行与优化</h2>
+<h2 align="center">执行与优化</h2>
 <ul><li><b>递增：</b>先在同一重量下把所有组做到次数上限；仍达到目标 RIR 时，再增加最小重量。加重后从次数下限重新开始。</li><li><b>训练量：</b>胸、背每周约 14–18 个直接工作组；肩和手臂还会从复合动作得到额外刺激，因此不继续盲目加组。</li><li><b>核心：</b>五个训练日都把腹肌放在最后，各做 2–3 组；屈曲、抗旋转、抗伸展和髋屈曲动作轮换。</li><li><b>腿日恢复：</b>一周只练一次腿，当前约 22 个腿臀小腿工作组已经足够。若训练超过 100 分钟，先删臀推 1 组以及两种提踵各 1 组。</li><li><b>时间不足：</b>始终保留当天前两个复合动作；随后优先保留侧平举／后束、手臂各一个动作。先删同功能的第二个孤立动作，但保留末尾腹肌。</li><li><b>传统硬拉：</b>若目标包含硬拉专项力量，可在 Pull A 开头做 2–3 × 3–5，并删除当天一个划船动作；纯增肌不强制加入。</li><li><b>减量：</b>连续两周表现下降、关节持续不适或睡眠与疲劳明显恶化时，用一周把正式组减半、重量降低约 10–15%，并保留 3–4 RIR。</li><li><b>替换：</b>疼痛、器械缺失或连续 3–4 周无法渐进时，换成“肌群与对应动作”中同一肌群的下一优先级动作；不要同时增加动作数量。</li></ul>
 `;
 const planImages = new Map([
@@ -219,5 +219,5 @@ for (const [name, slug] of planImages) {
   if (!image) throw new Error(`Missing plan image: ${name} / ${slug}`);
   out = out.replaceAll(`<td>${name}</td><td>`, `<td>${name}</td><td align="center"><img src="${image}" width="180" alt="${name}动作示意图"></td><td>`);
 }
-out += `<h2>图片与许可</h2>\n<p>动作插画与动作数据主要来自 <a href="https://marcmayol.com/exercise-api/">Exercise API by Marc Mayol</a>；图库缺少的泡沫轴与筋膜球动作使用同一视觉规范补绘并保存在本项目。解剖定位图统一基于 Ryan Graves 绘制的 <a href="https://github.com/kit-g/flutter-body-atlas">flutter_body_atlas</a> 高精度 SVG 肌肉图谱制作，按 CC BY 4.0 使用；本项目仅改变取景、灰度与目标肌肉高亮。图片仅用于动作辨认与训练规划，不替代医疗建议或现场技术指导。</p>\n`;
+out += `<h2 align="center">图片与许可</h2>\n<p>动作插画与动作数据主要来自 <a href="https://marcmayol.com/exercise-api/">Exercise API by Marc Mayol</a>；图库缺少的泡沫轴与筋膜球动作使用同一视觉规范补绘并保存在本项目。解剖定位图统一基于 Ryan Graves 绘制的 <a href="https://github.com/kit-g/flutter-body-atlas">flutter_body_atlas</a> 高精度 SVG 肌肉图谱制作，按 CC BY 4.0 使用；本项目仅改变取景、灰度与目标肌肉高亮。图片仅用于动作辨认与训练规划，不替代医疗建议或现场技术指导。</p>\n`;
 fs.writeFileSync("README.md", out);
