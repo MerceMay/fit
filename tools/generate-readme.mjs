@@ -4,46 +4,43 @@ const base = "https://marcmayol.com/exercise-api";
 const catalog = await fetch(`${base}/v1/dataset.json`).then((r) => r.json());
 const bySlug = new Map(catalog.exercises.map((x) => [x.slug, x]));
 
+const upper = "65 115 457 520", torso = "100 175 387 500", legs = "90 545 407 590";
 const medical = {
-  "三角肌前束": { ids:["FMA34677"], view:"front" },
-  "三角肌中束": { ids:["FMA34678"], view:"front" },
-  "三角肌后束": { ids:["FMA34679"], view:"back" },
-  "胸大肌锁骨部（上胸）": { ids:["FMA34687"], view:"front" },
-  "胸大肌胸肋部（整体／中部偏重）": { ids:["FMA34696"], view:"front" },
-  "胸大肌胸肋部下方纤维偏重": { ids:["FMA34699"], view:"front" },
-  "肱二头肌": { ids:["FMA37682","FMA37683"], view:"front" },
-  "肱肌／肱桡肌": { ids:["FMA37667","FMA38485"], view:"front" },
-  "肱三头长头": { ids:["FMA37692"], view:"back" },
-  "肱三头外侧头／内侧头": { ids:["FMA37693","FMA37694"], view:"back" },
-  "斜方肌中下束／菱形肌（背厚）": { ids:["FMA32555","FMA32556","FMA13379","FMA13380"], view:"back" },
-  "斜方肌上束": { ids:["FMA32557"], view:"back" },
-  "股四头肌": { ids:["FMA22430","FMA22431","FMA22432","FMA22433"], view:"front" },
-  "腘绳肌": { ids:["FMA22357","FMA22438","FMA45887","FMA45890"], view:"back" },
-  "臀大肌": { ids:["FMA22314"], view:"back" },
-  "臀中肌／髋外展肌群": { ids:["FMA22315","FMA22317"], view:"back" },
-  "髋内收肌群": { ids:["FMA22441","FMA22442","FMA22443"], view:"front" },
-  "腓肠肌": { ids:["FMA45956","FMA45959"], view:"back" },
-  "比目鱼肌": { ids:["FMA22542"], view:"back" },
-  "腹斜肌／抗旋转": { ids:["FMA13335"], view:"front" },
+  "三角肌前束": { ids:["anterior_deltoid"], view:"front", box:upper },
+  "三角肌中束": { ids:["lateral_deltoid"], view:"front", box:upper },
+  "三角肌后束": { ids:["posterior_deltoid"], view:"back", box:upper },
+  "胸大肌锁骨部（上胸）": { ids:["pectoralis_major"], view:"front", box:upper },
+  "胸大肌胸肋部（整体／中部偏重）": { ids:["pectoralis_major"], view:"front", box:upper },
+  "胸大肌胸肋部下方纤维偏重": { ids:["pectoralis_major"], view:"front", box:upper },
+  "肱二头肌": { ids:["biceps_brachii"], view:"front", box:upper },
+  "肱肌／肱桡肌": { ids:["brachioradialis"], view:"front", box:upper },
+  "肱三头长头": { ids:["triceps_brachii_caput_longum"], view:"back", box:upper },
+  "肱三头外侧头／内侧头": { ids:["triceps_brachii_caput_laterale","triceps_brachii_caput_mediale"], view:"back", box:upper },
+  "背阔肌／大圆肌（背宽）": { ids:["latissimus_dorsi"], view:"back", box:torso },
+  "斜方肌中下束／菱形肌（背厚）": { ids:["trapezius_middle","trapezius_lower"], view:"back", box:upper },
+  "斜方肌上束": { ids:["trapezius_upper"], view:"back", box:upper },
+  "竖脊肌／腰背稳定肌": { ids:["latissimus_dorsi"], view:"back", box:torso },
+  "股四头肌": { ids:["vastus_","rectus_femoris"], view:"front", box:legs },
+  "腘绳肌": { ids:["semimembranosus","semitendinosus","biceps_femoris"], view:"back", box:legs },
+  "臀大肌": { ids:["gluteus_maximus"], view:"back", box:legs },
+  "臀中肌／髋外展肌群": { ids:["gluteus_medius"], view:"back", box:legs },
+  "髋内收肌群": { ids:["adductor_","gracilis","pectineus"], view:"front", box:legs },
+  "腓肠肌": { ids:["gastrocnemius"], view:"back", box:legs },
+  "比目鱼肌": { ids:["gastrocnemius"], view:"back", box:legs },
+  "腹直肌": { ids:["rectus_abdominis"], view:"front", box:torso },
+  "腹斜肌／抗旋转": { ids:["external_oblique"], view:"front", box:torso },
+  "深层核心／抗伸展": { ids:["rectus_abdominis","external_oblique"], view:"front", box:torso },
 };
 
-const anatomyDir = "assets/anatomy-medical";
+const anatomyDir = "assets/anatomy-atlas";
 fs.mkdirSync(anatomyDir, { recursive: true });
 const safeName = (s) => [...s].map((c) => /[A-Za-z0-9]/.test(c) ? c : `u${c.codePointAt(0).toString(16)}`).join("-");
 for (const [group, spec] of Object.entries(medical)) {
-  const config = {
-    Window:{ImageWidth:900,ImageHeight:900,BackgroundColor:"FFFFFF",BackgroundOpacity:100},
-    Camera:{CameraMode:spec.view},
-    Part:[
-      {PartID:"FMA5018",PartColor:"64748B",PartOpacity:0.72},
-      {PartID:"FMA5022",PartColor:"A3A3A3",PartOpacity:0.48},
-      ...spec.ids.map((PartID) => ({PartID,PartColor:"DC2626",PartOpacity:1})),
-    ],
-  };
-  const url = `https://lifesciencedb.jp/bp3d/API/image?${encodeURIComponent(JSON.stringify(config))}`;
-  const response = await fetch(url);
-  if (!response.ok) throw new Error(`Anatomography ${response.status}: ${group}`);
-  fs.writeFileSync(`${anatomyDir}/${safeName(group)}.png`, Buffer.from(await response.arrayBuffer()));
+  let svg = fs.readFileSync(`assets/anatomy-atlas-${spec.view}.svg`, "utf8");
+  svg = svg.replace(/viewBox="[^"]+"/, `viewBox="${spec.box}"`).replace(/<svg /, '<svg preserveAspectRatio="xMidYMid meet" ');
+  const selectors = spec.ids.flatMap((id) => [`[id^="${id}"]`, `[id*="_${id}"]`]).join(",");
+  svg = svg.replace("</svg>", `<style>${selectors}{fill:#dc2626!important;stroke:#991b1b!important;stroke-width:1.2}</style></svg>`);
+  fs.writeFileSync(`${anatomyDir}/${safeName(group)}.svg`, svg);
 }
 
 const sections = [
@@ -139,7 +136,7 @@ let out = `# FIT：肌群动作库、热身与五练 PPL
 for (const [section, groups] of sections) {
   out += `<h2>${section}</h2>\n<table><thead><tr><th width="12%">精确肌群</th><th width="14%">解剖定位</th><th>动作（按优先级）</th></tr></thead><tbody>\n`;
   for (const [group, actions] of groups) {
-    const anatomy = medical[group] ? `${anatomyDir}/${safeName(group)}.png` : bySlug.get(actions[0][0]).muscleMaps.male;
+    const anatomy = medical[group] ? `${anatomyDir}/${safeName(group)}.svg` : bySlug.get(actions[0][0]).muscleMaps.male;
     out += `<tr><th valign="top">${group}</th><td valign="top" align="center"><img src="${anatomy}" width="190" alt="${esc(group)}解剖定位图"></td><td>${cards(actions, group)}</td></tr>\n`;
   }
   out += `</tbody></table>\n\n`;
@@ -149,7 +146,7 @@ out += `<h1>第二节：专项准备动作库</h1>
 <table><thead><tr><th width="12%">准备区域</th><th width="14%">主要关联肌群</th><th>专项准备动作</th></tr></thead><tbody>`;
 for (const [region, anatomyGroup, actions] of warmupGroups) {
   const first = actions.find(([slug]) => !slug.startsWith("custom:"));
-  const anatomy = medical[anatomyGroup] ? `${anatomyDir}/${safeName(anatomyGroup)}.png` : bySlug.get(first[0]).muscleMaps.male;
+  const anatomy = medical[anatomyGroup] ? `${anatomyDir}/${safeName(anatomyGroup)}.svg` : bySlug.get(first[0]).muscleMaps.male;
   out += `<tr><th valign="top">${esc(region)}</th><td valign="top" align="center"><img src="${anatomy}" width="190" alt="${esc(region)}关联肌群图"></td><td>${warmupCards(actions)}</td></tr>`;
 }
 out += `</tbody></table>
@@ -209,5 +206,5 @@ for (const [name, slug] of planImages) {
   if (!image) throw new Error(`Missing plan image: ${name} / ${slug}`);
   out = out.replaceAll(`<td>${name}</td><td>`, `<td>${name}</td><td align="center"><img src="${image}" width="180" alt="${name}动作示意图"></td><td>`);
 }
-out += `<h2>图片与许可</h2>\n<p>动作插画与动作数据主要来自 <a href="https://marcmayol.com/exercise-api/">Exercise API by Marc Mayol</a>；图库缺少的泡沫轴与筋膜球动作使用同一视觉规范补绘并保存在本项目。医学解剖图由 <a href="https://lifesciencedb.jp/bp3d/">BodyParts3D / Anatomography</a> 渲染，并根据 FMA 解剖标识将目标肌肉标红；BodyParts3D © The Database Center for Life Science，按 CC BY-SA 2.1 Japan 使用。源模型暂不具备的结构保留 Exercise API 肌肉图。图片仅用于动作辨认与训练规划，不替代医疗建议或现场技术指导。</p>\n`;
+out += `<h2>图片与许可</h2>\n<p>动作插画与动作数据主要来自 <a href="https://marcmayol.com/exercise-api/">Exercise API by Marc Mayol</a>；图库缺少的泡沫轴与筋膜球动作使用同一视觉规范补绘并保存在本项目。解剖定位图统一基于 Ryan Graves 绘制的 <a href="https://github.com/kit-g/flutter-body-atlas">flutter_body_atlas</a> 高精度 SVG 肌肉图谱制作，按 CC BY 4.0 使用；本项目仅改变取景、灰度与目标肌肉高亮。图片仅用于动作辨认与训练规划，不替代医疗建议或现场技术指导。</p>\n`;
 fs.writeFileSync("README.md", out);
