@@ -4,7 +4,7 @@ const base = "https://marcmayol.com/exercise-api";
 const catalog = await fetch(`${base}/v1/dataset.json`).then((r) => r.json());
 const bySlug = new Map(catalog.exercises.map((x) => [x.slug, x]));
 
-const upper = "65 115 457 520", torso = "100 175 387 500", legs = "90 545 407 590";
+const upper = "65 0 457 650", torso = "65 90 457 650", legs = "65 400 457 737";
 const medical = {
   "三角肌前束": { ids:["anterior_deltoid"], view:"front", box:upper },
   "三角肌中束": { ids:["lateral_deltoid"], view:"front", box:upper },
@@ -170,6 +170,16 @@ out += `<h1 align="center">第三节：五练 PPL 计划</h1>
 <tr><td>周一</td><td>Push A</td><td>平板卧推＋肩中束＋三头长头</td></tr><tr><td>周二</td><td>Pull A</td><td>垂直拉＋背厚＋二头</td></tr><tr><td>周三</td><td>Legs</td><td>股四、腘绳、臀、小腿完整覆盖</td></tr><tr><td>周四</td><td>休息</td><td>恢复、散步或轻度活动</td></tr><tr><td>周五</td><td>Push B</td><td>上胸＋肩推＋三头</td></tr><tr><td>周六</td><td>Pull B</td><td>背阔肌＋上背＋后束＋二头</td></tr><tr><td>周日</td><td>休息</td><td>恢复</td></tr>
 </tbody></table>
 
+<h2 align="center">腹部／核心收尾安排</h2>
+<p>五个训练日均在力量动作之后训练核心，每次只做一个方向，避免把腹部训练堆成影响复合动作恢复的高疲劳模块。</p>
+<table><thead><tr><th>训练日</th><th>核心动作</th><th>训练方向</th><th>建议</th></tr></thead><tbody>
+<tr><td>Push A</td><td>绳索卷腹</td><td>负重脊柱屈曲</td><td>3 × 10–15</td></tr>
+<tr><td>Pull A</td><td>Pallof Press</td><td>抗旋转</td><td>3 × 每侧 10–15</td></tr>
+<tr><td>Legs</td><td>死虫式</td><td>低疲劳抗伸展</td><td>2 × 每侧 8–12</td></tr>
+<tr><td>Push B</td><td>悬垂举腿</td><td>骨盆后倾／髋屈控制</td><td>3 × 8–15</td></tr>
+<tr><td>Pull B</td><td>健腹轮</td><td>高张力抗伸展</td><td>3 × 6–12</td></tr>
+</tbody></table>
+
 <h2 align="center">Push A</h2>
 <table><thead><tr><th colspan="4">专项准备（约 8–12 分钟）</th></tr><tr><th>#</th><th>动作</th><th>剂量</th><th>目的</th></tr></thead><tbody><tr><td>1</td><td>卧推凳胸椎伸展</td><td>1 × 8–12</td><td>打开胸椎伸展位</td></tr><tr><td>2</td><td>单片重量绳索面拉</td><td>1 × 15–20</td><td>肩袖与肩胛控制</td></tr><tr><td>3</td><td>单片重量低位夹胸</td><td>1 × 12–15</td><td>建立胸肌收缩感觉</td></tr><tr><td>4</td><td>杠铃卧推递增组</td><td>空杆 10–15；50% × 6–8；70% × 3–5；需要时 80% × 1–3</td><td>排练正式动作，均远离力竭</td></tr></tbody></table>
 <table><thead><tr><th>#</th><th>动作</th><th>正式组 × 次数</th><th>休息</th><th>RIR</th></tr></thead><tbody>
@@ -220,4 +230,58 @@ for (const [name, slug] of planImages) {
   out = out.replaceAll(`<td>${name}</td><td>`, `<td>${name}</td><td align="center"><img src="${image}" width="180" alt="${name}动作示意图"></td><td>`);
 }
 out += `<h2 align="center">图片与许可</h2>\n<p>动作插画与动作数据主要来自 <a href="https://marcmayol.com/exercise-api/">Exercise API by Marc Mayol</a>；图库缺少的泡沫轴与筋膜球动作使用同一视觉规范补绘并保存在本项目。解剖定位图统一基于 Ryan Graves 绘制的 <a href="https://github.com/kit-g/flutter-body-atlas">flutter_body_atlas</a> 高精度 SVG 肌肉图谱制作，按 CC BY 4.0 使用；本项目仅改变取景、灰度与目标肌肉高亮。图片仅用于动作辨认与训练规划，不替代医疗建议或现场技术指导。</p>\n`;
-fs.writeFileSync("README.md", out);
+
+const zhNav = `<p align="center"><a href="README.md">English</a> | <b>简体中文</b></p>\n<p align="center"><a href="output/pdf/FIT-Training-Guide-zh-CN.pdf">下载简体中文 PDF</a></p>\n`;
+const enNav = `<p align="center"><b>English</b> | <a href="README.zh-CN.md">简体中文</a></p>\n<p align="center"><a href="output/pdf/FIT-Training-Guide-en.pdf">Open / download the English PDF</a></p>\n`;
+const chinese = out.replace("<h1 align=\"center\">", `${zhNav}<h1 align="center">`);
+
+const translations = new Map(Object.entries({
+  "FIT：肌群动作库、热身与五练 PPL":"FIT: Muscle Exercise Library, Warm-ups, and 5-Day PPL",
+  "肌群与对应动作":"Muscles and Recommended Exercises",
+  "肩膀":"Shoulders","胸":"Chest","手臂":"Arms","背":"Back","腿与臀":"Legs and Glutes","核心":"Core",
+  "三角肌前束":"Anterior Deltoid","三角肌中束":"Lateral Deltoid","三角肌后束":"Posterior Deltoid",
+  "胸大肌锁骨部（上胸）":"Clavicular Pectoralis Major (Upper Chest)","胸大肌胸肋部（整体／中部偏重）":"Sternocostal Pectoralis Major (Mid Chest Bias)","胸大肌胸肋部下方纤维偏重":"Lower Sternocostal Pectoralis Major",
+  "肱二头肌":"Biceps Brachii","肱肌／肱桡肌":"Brachialis / Brachioradialis","肱三头长头":"Triceps Long Head","肱三头外侧头／内侧头":"Triceps Lateral / Medial Heads",
+  "背阔肌／大圆肌（背宽）":"Latissimus Dorsi / Teres Major (Back Width)","斜方肌中下束／菱形肌（背厚）":"Mid-Lower Trapezius / Rhomboids (Back Thickness)","斜方肌上束":"Upper Trapezius","竖脊肌／腰背稳定肌":"Erector Spinae / Lumbar Stabilizers",
+  "股四头肌":"Quadriceps","腘绳肌":"Hamstrings","臀大肌":"Gluteus Maximus","臀中肌／髋外展肌群":"Gluteus Medius / Hip Abductors","髋内收肌群":"Hip Adductors","腓肠肌":"Gastrocnemius","比目鱼肌":"Soleus",
+  "腹直肌":"Rectus Abdominis","腹斜肌／抗旋转":"Obliques / Anti-Rotation","深层核心／抗伸展":"Deep Core / Anti-Extension",
+  "第二节：专项准备动作库":"Section 2: Targeted Warm-up Library","第三节：五练 PPL 计划":"Section 3: 5-Day PPL Plan",
+  "胸椎／上背":"Thoracic Spine / Upper Back","肩胛／肩袖":"Scapula / Rotator Cuff","胸肩前侧":"Anterior Chest / Shoulder","背阔／肩胛下沉":"Lats / Scapular Depression","髋关节／臀部":"Hips / Glutes","股四头／膝关节":"Quadriceps / Knees","腘绳肌／髋铰链":"Hamstrings / Hip Hinge","踝关节／小腿":"Ankles / Calves","核心／腰椎稳定":"Core / Lumbar Stability",
+  "综合首选：稳定、易渐进且目标肌肉受力明确":"Top choice: stable, easy to progress, and clear target-muscle loading","优先替代：兼顾刺激与训练舒适度":"Preferred alternative: balances stimulus and comfort","器械或动作偏好不同时的可靠选择":"Reliable option when equipment or exercise preference differs","用于补充不同阻力曲线或训练角度":"Adds a different resistance curve or training angle",
+  "建议：":"Prescription: ","组间休息：":"Rest: ","主要：":"Primary: ","次要：":"Secondary: ","定位：":"Why: ",
+  "器材：":"Equipment: ","剂量：":"Dose: ","强度：":"Intensity: ","作用：":"Purpose: ",
+  "全程轻松，不出现力竭或明显灼烧":"Keep it easy; no failure or significant burn","改善该区域活动度、控制或主动作感觉":"Improve mobility, control, or movement feel in this region",
+  "本节只用于按区域查动作：优先收录瑜伽垫动态活动、泡沫轴／筋膜球、弹力带、龙门架单片重量和空杆动作。一次训练从相关行选择少量动作即可，不需要整行全部完成。":"Use this section to find warm-ups by region. It prioritizes mat-based dynamic work, foam rollers or massage balls, bands, single-plate cable work, and empty-bar drills. Select only a few relevant movements per session.",
+  "周结构为 Push A / Pull A / Legs / 休息 / Push B / Pull B / 休息。两个 Push 和两个 Pull 保留必要的高收益重复动作，不为追求花样强行完全错开。":"Weekly structure: Push A / Pull A / Legs / Rest / Push B / Pull B / Rest. The two Push and Pull sessions intentionally retain productive overlap instead of forcing unnecessary variation.",
+  "图片与许可":"Images and Licensing",
+  "动作插画与动作数据主要来自 ":"Exercise illustrations and exercise data primarily come from ","；图库缺少的泡沫轴与筋膜球动作使用同一视觉规范补绘并保存在本项目。解剖定位图统一基于 Ryan Graves 绘制的 ":". Missing foam-roller and massage-ball illustrations were added locally using the same visual conventions. Anatomy maps are consistently based on Ryan Graves' "," 高精度 SVG 肌肉图谱制作，按 CC BY 4.0 使用；本项目仅改变取景、灰度与目标肌肉高亮。图片仅用于动作辨认与训练规划，不替代医疗建议或现场技术指导。":" high-detail SVG muscle atlas under CC BY 4.0; this project changes only framing, grayscale treatment, and target-muscle highlighting. Images support exercise recognition and planning and do not replace medical advice or in-person coaching.",
+  "执行与优化":"Execution and Progression","专项准备（约 8–12 分钟）":"Targeted warm-up (about 8-12 min)","专项准备（约 10–15 分钟）":"Targeted warm-up (about 10-15 min)",
+  "腹部／核心收尾安排":"Ab / Core Finisher Rotation","五个训练日均在力量动作之后训练核心，每次只做一个方向，避免把腹部训练堆成影响复合动作恢复的高疲劳模块。":"Train core after the strength work on all five training days. Use one emphasis per session to avoid turning ab work into a high-fatigue block that interferes with compound-lift recovery.",
+  "训练日":"Training Day","核心动作":"Core Exercise","训练方向":"Training Emphasis","负重脊柱屈曲":"Loaded spinal flexion","抗旋转":"Anti-rotation","低疲劳抗伸展":"Low-fatigue anti-extension","骨盆后倾／髋屈控制":"Posterior pelvic tilt / hip-flexion control","高张力抗伸展":"High-tension anti-extension",
+  "动作":"Exercise","示意图":"Illustration","剂量":"Dose","目的":"Purpose","正式组 × 次数":"Working Sets x Reps","休息":"Rest","重点":"Focus","训练":"Training","日程":"Day","建议":"Prescription","Leg extension机":"Leg extension machine"
+  ,"周一":"Monday","周二":"Tuesday","周三":"Wednesday","周四":"Thursday","周五":"Friday","周六":"Saturday","周日":"Sunday","恢复":"Recovery","恢复、散步或轻度活动":"Recovery, walking, or light activity"
+  ,"平板卧推＋肩中束＋三头长头":"Flat bench press + lateral delts + triceps long head","垂直拉＋背厚＋二头":"Vertical pull + back thickness + biceps","股四、腘绳、臀、小腿完整覆盖":"Complete quadriceps, hamstring, glute, and calf coverage","上胸＋肩推＋三头":"Upper chest + shoulder press + triceps","背阔肌＋上背＋后束＋二头":"Lats + upper back + rear delts + biceps"
+  ,"瑜伽垫":"Exercise mat","瑜伽垫／卧推凳":"Exercise mat / bench","瑜伽垫／上斜凳":"Exercise mat / incline bench","瑜伽垫／弹力带":"Exercise mat / resistance band","泡沫轴＋瑜伽垫":"Foam roller + exercise mat","龙门架":"Cable station","龙门架／弹力带":"Cable station / resistance band","龙门架／反向蝴蝶机":"Cable station / reverse pec deck","门框／立柱":"Doorframe / upright","高位下拉器":"Lat pulldown machine","腿屈伸机":"Leg extension machine","腿弯举机":"Leg curl machine","哑铃／壶铃":"Dumbbell / kettlebell","深蹲架":"Squat rack","空杆":"Empty bar","木棍／PVC 杆":"Dowel / PVC pipe","墙面":"Wall","墙面／弹力带":"Wall / resistance band","台阶／地面":"Step / floor","筋膜球／网球":"Massage ball / tennis ball"
+  ,"打开胸椎伸展位":"Open thoracic extension","肩袖与肩胛控制":"Rotator-cuff and scapular control","建立胸肌收缩感觉":"Establish chest contraction","排练正式动作，均远离力竭":"Practice the working movement well away from failure","恢复胸椎旋转":"Restore thoracic rotation","背阔与肩胛下沉":"Lat engagement and scapular depression","上背后缩控制":"Upper-back retraction control","正式组前保持二头和握力新鲜":"Keep biceps and grip fresh before working sets","仅处理明显紧张区域，不长时间碾压":"Address only clearly tight areas; do not roll for long periods","髋内外旋准备":"Prepare hip internal and external rotation","为深蹲深度准备踝关节":"Prepare ankle mobility for squat depth","腘绳肌与膝后侧升温":"Warm the hamstrings and posterior knee","排练站距、深度与腹压":"Practice stance, depth, and bracing","胸椎与胸肩前侧活动":"Mobilize the thoracic spine and anterior chest/shoulder","下斜方肌、后束与肩袖准备":"Prepare lower traps, rear delts, and rotator cuff","轻负荷寻找肩胛上旋轨迹":"Find a smooth scapular upward-rotation path under light load","排练第一正式动作":"Practice the first working exercise","脊柱分节活动":"Segmental spinal mobility","后束、肩袖与上背准备":"Prepare rear delts, rotator cuff, and upper back","建立背阔发力感觉":"Establish lat engagement","正式组前保持握力和二头新鲜":"Keep grip and biceps fresh before working sets","动作始终可控":"Keep every rep controlled"
+  ,"空杆 10–15；50% × 6–8；70% × 3–5；需要时 80% × 1–3":"Empty bar 10-15; 50% x 6-8; 70% x 3-5; if needed, 80% x 1-3","轻重量 12；约 60% × 6–8；约 75% × 3–5":"Light load x 12; about 60% x 6-8; about 75% x 3-5","轻哑铃 10–12；约 60% × 6–8；约 75% × 3–5":"Light dumbbells x 10-12; about 60% x 6-8; about 75% x 3-5","1 × 每形态 6–10":"1 x 6-10 per position","1 × 每形态 6–8":"1 x 6-8 per position"
+  ,"递增：":"Progression:","训练量：":"Training volume:","核心：":"Core:","腿日恢复：":"Leg-day recovery:","时间不足：":"When short on time:","传统硬拉：":"Conventional deadlift:","减量：":"Deload:","替换：":"Substitutions:"
+  ,"先在同一重量下把所有组做到次数上限；仍达到目标 RIR 时，再增加最小重量。加重后从次数下限重新开始。":"First reach the top of the rep range on every set at the same load. If you still meet the target RIR, add the smallest available increment and restart at the bottom of the range.","胸、背每周约 14–18 个直接工作组；肩和手臂还会从复合动作得到额外刺激，因此不继续盲目加组。":"Chest and back receive about 14-18 direct working sets per week. Shoulders and arms also receive compound-exercise stimulus, so do not add volume blindly.","五个训练日都把腹肌放在最后，各做 2–3 组；屈曲、抗旋转、抗伸展和髋屈曲动作轮换。":"Finish all five training days with 2-3 core sets, rotating flexion, anti-rotation, anti-extension, and hip-flexion patterns.","一周只练一次腿，当前约 22 个腿臀小腿工作组已经足够。若训练超过 100 分钟，先删臀推 1 组以及两种提踵各 1 组。":"With one leg day per week, about 22 current leg, glute, and calf sets are enough. If the session exceeds 100 minutes, remove one hip-thrust set and one set from each calf exercise.","始终保留当天前两个复合动作；随后优先保留侧平举／后束、手臂各一个动作。先删同功能的第二个孤立动作，但保留末尾腹肌。":"Always retain the first two compound exercises. Then keep one lateral-delt or rear-delt movement and one arm movement. Remove the second isolation exercise with the same function first, but keep the final core exercise.","若目标包含硬拉专项力量，可在 Pull A 开头做 2–3 × 3–5，并删除当天一个划船动作；纯增肌不强制加入。":"For deadlift-specific strength, perform 2-3 x 3-5 at the start of Pull A and remove one rowing exercise that day. It is optional for a hypertrophy-only goal.","连续两周表现下降、关节持续不适或睡眠与疲劳明显恶化时，用一周把正式组减半、重量降低约 10–15%，并保留 3–4 RIR。":"After two weeks of declining performance, persistent joint discomfort, or clearly worse sleep and fatigue, take one week at half the working sets, about 10-15% less load, and 3-4 RIR.","疼痛、器械缺失或连续 3–4 周无法渐进时，换成“肌群与对应动作”中同一肌群的下一优先级动作；不要同时增加动作数量。":"When pain, unavailable equipment, or 3-4 weeks without progression occurs, switch to the next-ranked exercise for the same muscle in the exercise library. Do not increase the number of exercises at the same time."
+}));
+
+let english = out;
+english = english.replace(/<th>#(\d+) [^<]+<br><sub>([^<]+)<\/sub><\/th>/g, "<th>#$1 $2</th>");
+english = english.replace(/alt="[^"]+"/g, 'alt="Exercise or anatomy illustration"');
+for (const [name, slug] of planImages) {
+  const en = slug === "custom:foam" ? "Foam-roll quadriceps" : bySlug.get(slug)?.name.en;
+  if (en) english = english.replaceAll(name, en);
+}
+for (const [from, to] of [...translations].sort((a,b) => b[0].length - a[0].length)) english = english.replaceAll(from, to);
+english = english
+  .replaceAll("泡沫轴滚股四头", "Foam-roll quadriceps")
+  .replaceAll("足底筋膜球滚动", "Massage-ball plantar fascia roll")
+  .replace(/(\d+(?:–\d+)?) 组/g, "$1 sets")
+  .replaceAll(" 秒", " sec").replaceAll(" 分钟", " min").replaceAll("每侧", "each side").replaceAll("约 ", "about ")
+  .replace("<h1 align=\"center\">", `${enNav}<h1 align="center">`);
+
+fs.writeFileSync("README.zh-CN.md", chinese);
+fs.writeFileSync("README.md", english);
