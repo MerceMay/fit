@@ -106,13 +106,21 @@ const prescriptions = {
 };
 const prescription = (slug) => prescriptions[slug] ?? (compounds.has(slug) ? ["3–4","6–12","90–180 秒"] : ["2–4","10–20","60–90 秒"]);
 const reasons = ["综合首选：稳定、易渐进且目标肌肉受力明确", "优先替代：兼顾刺激与训练舒适度", "器械或动作偏好不同时的可靠选择", "用于补充不同阻力曲线或训练角度"];
-const cards = (actions, group) => `<table><tbody><tr>${actions.map(([slug, zh], i) => {
+const pairRows = (cells) => cells.reduce((rows, cell, i) => {
+  if (i % 2 === 0) rows.push([]);
+  rows.at(-1).push(cell);
+  return rows;
+}, []).map((row) => `<tr>${row.join("")}${row.length === 1 ? '<td width="50%"></td>' : ""}</tr>`).join("");
+const cards = (actions, group) => {
+  const cells = actions.map(([slug, zh], i) => {
   const ex = bySlug.get(slug); if (!ex) throw new Error(`Missing exercise: ${slug}`);
   const pri = ex.primaryMuscles.map((m) => m.en).join("、");
   const sec = ex.secondaryMuscles.map((m) => m.en).join("、") || "—";
   const [sets,reps,rest] = prescription(slug);
-  return `<td width="25%" valign="top"><table><tbody><tr><th>#${i+1} ${esc(zh)}<br><sub>${esc(ex.name.en)}</sub></th></tr><tr><td align="center"><img src="${ex.images.male}" width="250" alt="${esc(zh)}动作起止位"></td></tr><tr><td><b>建议：</b>${sets} 组 × ${reps}<br><b>组间休息：</b>${rest}<br><b>主要：</b>${esc(pri)}<br><b>次要：</b>${esc(sec)}<br><b>定位：</b>${reasons[i] ?? reasons[3]}</td></tr></tbody></table></td>`;
-}).join("")}</tr></tbody></table>`;
+  return `<td width="50%" valign="top"><table><tbody><tr><th>#${i+1} ${esc(zh)}<br><sub>${esc(ex.name.en)}</sub></th></tr><tr><td align="center"><img src="${ex.images.male}" width="300" alt="${esc(zh)}动作起止位"></td></tr><tr><td><b>建议：</b>${sets} 组 × ${reps}<br><b>组间休息：</b>${rest}<br><b>主要：</b>${esc(pri)}<br><b>次要：</b>${esc(sec)}<br><b>定位：</b>${reasons[i] ?? reasons[3]}</td></tr></tbody></table></td>`;
+  });
+  return `<table><tbody>${pairRows(cells)}</tbody></table>`;
+};
 
 const warmupGroups = [
   ["胸椎／上背", "斜方肌中下束／菱形肌（背厚）", [["thoracic-extension-bench","卧推凳胸椎伸展","瑜伽垫／卧推凳","1–2 × 8–12"],["open-book-stretch","侧卧开书式","瑜伽垫","1 × 每侧 8–12"],["quadruped-thoracic-rotation","四点跪姿胸椎旋转","瑜伽垫","1 × 每侧 8–12"],["cat-cow","猫牛式","瑜伽垫","1 × 8–12"]]],
@@ -125,12 +133,15 @@ const warmupGroups = [
   ["踝关节／小腿", "腓肠肌", [["ankle-dorsiflexion-wall","墙前踝背屈","墙面／弹力带","1 × 每侧 10–15"],["calf-stretch-wall","动态靠墙小腿活动","墙面","1 × 每侧 8–12"],["standing-calf-raises","慢速徒手提踵","台阶／地面","1 × 12–15"],["custom:foot-ball","足底筋膜球滚动","筋膜球／网球","每侧 30–45 秒","assets/warmup/massage-ball-plantar-fascia.png"]]],
   ["核心／腰椎稳定", "深层核心／抗伸展", [["dead-bug","死虫式","瑜伽垫","1 × 每侧 6–10"],["bird-dog","鸟狗式","瑜伽垫","1 × 每侧 6–10"],["pallof-press","单片重量 Pallof Press","龙门架／弹力带","1 × 每侧 8–12"],["plank","短时平板支撑","瑜伽垫","1 × 20–30 秒"]]],
 ];
-const warmupCards = (actions) => `<table><tbody><tr>${actions.map(([slug,zh,equipment,dose,customImage],i) => {
+const warmupCards = (actions) => {
+  const cells = actions.map(([slug,zh,equipment,dose,customImage],i) => {
   const ex = slug.startsWith("custom:") ? null : bySlug.get(slug);
   if (!ex && !customImage) throw new Error(`Missing warm-up: ${slug}`);
   const image = customImage ?? ex.images.male;
-  return `<td width="25%" valign="top"><table><tbody><tr><th>#${i+1} ${esc(zh)}${ex ? `<br><sub>${esc(ex.name.en)}</sub>` : ""}</th></tr><tr><td align="center"><img src="${image}" width="250" alt="${esc(zh)}动作示意图"></td></tr><tr><td><b>器材：</b>${esc(equipment)}<br><b>剂量：</b>${esc(dose)}<br><b>强度：</b>全程轻松，不出现力竭或明显灼烧<br><b>作用：</b>改善该区域活动度、控制或主动作感觉</td></tr></tbody></table></td>`;
-}).join("")}</tr></tbody></table>`;
+  return `<td width="50%" valign="top"><table><tbody><tr><th>#${i+1} ${esc(zh)}${ex ? `<br><sub>${esc(ex.name.en)}</sub>` : ""}</th></tr><tr><td align="center"><img src="${image}" width="300" alt="${esc(zh)}动作示意图"></td></tr><tr><td><b>器材：</b>${esc(equipment)}<br><b>剂量：</b>${esc(dose)}<br><b>强度：</b>全程轻松，不出现力竭或明显灼烧<br><b>作用：</b>改善该区域活动度、控制或主动作感觉</td></tr></tbody></table></td>`;
+  });
+  return `<table><tbody>${pairRows(cells)}</tbody></table>`;
+};
 
 let out = `# FIT：肌群动作库、热身与五练 PPL
 
@@ -138,24 +149,22 @@ let out = `# FIT：肌群动作库、热身与五练 PPL
 
 `;
 for (const [section, groups] of sections) {
-  out += `<h2>${section}</h2>\n<table><thead><tr><th width="12%">精确肌群</th><th width="14%">解剖定位</th><th>动作（按优先级）</th></tr></thead><tbody>\n`;
+  out += `<h2>${section}</h2>\n`;
   for (const [group, actions] of groups) {
     const anatomy = medical[group] ? `${anatomyDir}/${safeName(group)}.svg` : bySlug.get(actions[0][0]).muscleMaps.male;
-    out += `<tr><th valign="top">${group}</th><td valign="top" align="center"><img src="${anatomy}" width="190" alt="${esc(group)}解剖定位图"></td><td>${cards(actions, group)}</td></tr>\n`;
+    out += `<h3>${group}</h3>\n<p><img src="${anatomy}" width="280" alt="${esc(group)}解剖定位图"></p>\n${cards(actions, group)}\n`;
   }
-  out += `</tbody></table>\n\n`;
+  out += `\n`;
 }
 out += `<h1>第二节：专项准备动作库</h1>
 <p>本节只用于按区域查动作：优先收录瑜伽垫动态活动、泡沫轴／筋膜球、弹力带、龙门架单片重量和空杆动作。一次训练从相关行选择少量动作即可，不需要整行全部完成。</p>
-<table><thead><tr><th width="12%">准备区域</th><th width="14%">主要关联肌群</th><th>专项准备动作</th></tr></thead><tbody>`;
+`;
 for (const [region, anatomyGroup, actions] of warmupGroups) {
   const first = actions.find(([slug]) => !slug.startsWith("custom:"));
   const anatomy = medical[anatomyGroup] ? `${anatomyDir}/${safeName(anatomyGroup)}.svg` : bySlug.get(first[0]).muscleMaps.male;
-  out += `<tr><th valign="top">${esc(region)}</th><td valign="top" align="center"><img src="${anatomy}" width="190" alt="${esc(region)}关联肌群图"></td><td>${warmupCards(actions)}</td></tr>`;
+  out += `<h3>${esc(region)}</h3>\n<p><img src="${anatomy}" width="280" alt="${esc(region)}关联肌群图"></p>\n${warmupCards(actions)}\n`;
 }
-out += `</tbody></table>
-
-<h1>第三节：五练 PPL 计划</h1>
+out += `<h1>第三节：五练 PPL 计划</h1>
 <p>周结构为 Push A / Pull A / Legs / 休息 / Push B / Pull B / 休息。两个 Push 和两个 Pull 保留必要的高收益重复动作，不为追求花样强行完全错开。</p>
 <table><thead><tr><th>日程</th><th>训练</th><th>重点</th></tr></thead><tbody>
 <tr><td>周一</td><td>Push A</td><td>平板卧推＋肩中束＋三头长头</td></tr><tr><td>周二</td><td>Pull A</td><td>垂直拉＋背厚＋二头</td></tr><tr><td>周三</td><td>Legs</td><td>股四、腘绳、臀、小腿完整覆盖</td></tr><tr><td>周四</td><td>休息</td><td>恢复、散步或轻度活动</td></tr><tr><td>周五</td><td>Push B</td><td>上胸＋肩推＋三头</td></tr><tr><td>周六</td><td>Pull B</td><td>背阔肌＋上背＋后束＋二头</td></tr><tr><td>周日</td><td>休息</td><td>恢复</td></tr>
